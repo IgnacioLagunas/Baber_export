@@ -1,6 +1,30 @@
+:root{
+    --navbar-height: 65px;
+}
+
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Encode Sans', sans-serif;
+}
+
+div{
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+}
+
+button{
+    background-color: white;
+    color: black;
+    border: none;
+    width: fit-content;
+    cursor: pointer;
+}
+
+.view_container{
+    width: 100vw;
+    height: calc(100vh - var(--navbar-height));
+    margin-top: var(--navbar-height);
 }

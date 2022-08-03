@@ -2,13 +2,14 @@ import styled from 'styled-components';
 
 export const NavbarWrapper = styled.header`
   width: 100%;
-  height: 74px;
+  height: var(--navbar-height);
   background-color: #fff;
   box-shadow: -4px -11px 20px;
   display: flex;
   align-items: center;
   justify-content: center;
   position: fixed;
+  top: 0;
   nav {
     flex: 1;
     width: 30%;
