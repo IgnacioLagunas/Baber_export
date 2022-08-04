@@ -49,6 +49,7 @@ export const NavbarWrapper = styled.header`
     flex: 1;
     display: flex;
     justify-content: center;
+    flex-direction: row;
   }
 
   .banner_container {

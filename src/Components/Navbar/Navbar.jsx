@@ -29,12 +29,13 @@ const Navbar = () => {
       <div className='banner_container'>{/* <Banner /> */}</div>
       <nav>
         <ul>
-          {links.map(({ link, label }) => (
+          {links.map(({ link, label }, index) => (
             <li>
               <Link
                 className={activeTab === label ? 'active' : ''}
                 onClick={({ target: { text } }) => setActiveTab(text)}
                 to={link}
+                key={index}
               >
                 {label}
               </Link>
