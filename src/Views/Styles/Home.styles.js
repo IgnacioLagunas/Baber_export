@@ -2,9 +2,8 @@ import styled from 'styled-components';
 
 export const HomeWrapper = styled.div`
   width: 100%;
-  height: 100%;
-  background-image: url(${({ backgroundImage }) => backgroundImage});
-  background-size: cover;
+  height: calc(100vh - var(--navbar-height));
+  margin-top: var(--navbar-height);
   display: flex;
   flex-direction: column;
   position: relative;

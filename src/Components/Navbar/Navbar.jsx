@@ -26,7 +26,9 @@ const Navbar = () => {
   const [activeTab, setActiveTab] = useState('HOME');
   return (
     <NavbarWrapper>
-      <div className='banner_container'>{/* <Banner /> */}</div>
+      <div className='banner_container'>
+        <Banner />
+      </div>
       <nav>
         <ul>
           {links.map(({ link, label }, index) => (

@@ -6,7 +6,8 @@ import './index.css';
 import About from './Views/About';
 import Products from './Views/Products';
 import Contact from './Views/Contact';
-import Home from './Views/Home';
+import App from './App';
+import ProductDetails from './Views/ProductDetails';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -14,10 +15,10 @@ root.render(
     <BrowserRouter>
       <Navbar />
       <Routes>
-        <Route path='/' element={<Home />} />
-        <Route path='About' element={<About />} />
-        <Route path='Products' element={<Products />} />
-        <Route path='Contact' element={<Contact />} />
+        <Route path='/' element={<App />} />
+        <Route path='about' element={<About />} />
+        <Route path='product/:id' element={<ProductDetails />} />
+        <Route path='contact' element={<Contact />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>

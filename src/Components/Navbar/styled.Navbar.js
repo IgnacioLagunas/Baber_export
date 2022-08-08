@@ -9,6 +9,7 @@ export const NavbarWrapper = styled.header`
   align-items: center;
   justify-content: center;
   position: fixed;
+  z-index: 999;
   top: 0;
   nav {
     flex: 1;

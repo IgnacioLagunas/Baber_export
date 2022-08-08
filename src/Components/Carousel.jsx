@@ -15,6 +15,12 @@ const Carousel = ({ images }) => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   const changeImg = () => {
+    images.forEach((img, index) => {
+      setTimeout(() => {
+        console.log(index);
+        setCurrentImageIndex(index);
+      }, 3000);
+    });
     console.log('llamado');
   };
 

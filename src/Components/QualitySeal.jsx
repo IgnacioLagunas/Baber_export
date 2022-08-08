@@ -4,6 +4,7 @@ import QualityFruitSVG from '../Assets/img/logo_PremiumFruitBABER/SVG/Recurso_1.
 
 const QualitySealWrapper = styled.div`
   position: absolute;
+  z-index: 9;
   top: 80px;
   right: 200px;
   width: 200px;
