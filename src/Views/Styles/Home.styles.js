@@ -2,8 +2,8 @@ import styled from 'styled-components';
 
 export const HomeWrapper = styled.div`
   width: 100%;
-  height: calc(100vh - var(--navbar-height));
-  margin-top: var(--navbar-height);
+  min-height: 100vh;
+  /* margin-top: var(--navbar-height); */
   display: flex;
   flex-direction: column;
   position: relative;
@@ -11,7 +11,7 @@ export const HomeWrapper = styled.div`
   /* justify-content: center; */
 
   .title_container {
-    margin-top: 12%;
+    margin-top: 220px;
     margin-left: 10%;
     width: 40%;
     gap: 1.5rem;

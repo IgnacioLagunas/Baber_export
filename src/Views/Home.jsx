@@ -6,13 +6,15 @@ import Carousel from '../Components/Carousel';
 import { ViewWrapper } from './Styles/View.styles';
 import { HomeImages } from '../Assets/img';
 
-const { Home_cerezas } = HomeImages;
+const { Home_cerezas, Home_duraznos, Home_manzanas, Home_uvas } = HomeImages;
 
 const Home = () => {
   return (
-    <ViewWrapper backgroundImage={Home_cerezas}>
+    <ViewWrapper>
       <HomeWrapper>
-        {/* <Carousel images={[ManzanasImg, CerezasImg, UvasImg, DuraznosImg]} /> */}
+        <Carousel
+          images={[Home_cerezas, Home_duraznos, Home_manzanas, Home_uvas]}
+        />
         <QualitySeal />
         <div className='title_container'>
           <h1 className='title'>UNA EMPRESA EXPORTADORA DE FRUTA FRESCA</h1>

@@ -4,25 +4,63 @@ import { ProductDetailsWrapper } from './Styles/ProductDetails.styles';
 import { BsFileEarmarkPdf } from 'react-icons/bs';
 import { ViewWrapper } from './Styles/View.styles';
 import { Frutas } from '../Data';
+import { ProductosImages } from '../Assets/img';
+import ImageSlider from '../Components/ImageSlider';
+
+const {
+  Productos_cerezas,
+  Productos_ciruelas,
+  Productos_kiwi,
+  Productos_limones,
+  Productos_manzanas,
+  Productos_naranjas,
+  Productos_nectarines,
+  Productos_peras,
+  Productos_uvas,
+} = ProductosImages;
+
+const ProductImagesArray = [
+  Productos_cerezas,
+  Productos_ciruelas,
+  Productos_kiwi,
+  Productos_limones,
+  Productos_manzanas,
+  Productos_naranjas,
+  Productos_nectarines,
+  Productos_peras,
+  Productos_uvas,
+];
 
 const ProductDetails = () => {
   const [hoveredIndex, setHoveredIndex] = useState(1);
   const [selectedFruit, setSelectedFruit] = useState(Frutas[0]);
+  const [selectedFruitIndex, setselectedFruitIndex] = useState();
 
   const { id } = useParams();
   const navigate = useNavigate();
 
+  const changeFruit = (i) => {
+    setSelectedFruit(Frutas[i]);
+    setselectedFruitIndex(i);
+  };
+
   useEffect(() => {
-    const frutaID = Frutas.find((fruta) => fruta.id == id);
-    if (frutaID) setSelectedFruit(frutaID);
-    else {
+    const idFruitIndex = Frutas.findIndex((fruta) => fruta.id == id);
+    if (idFruitIndex > -1) {
+      setSelectedFruit(Frutas[idFruitIndex]);
+      setselectedFruitIndex(idFruitIndex);
+    } else {
       navigate(`../product/${Frutas[0].id}`);
     }
   }, []);
 
   return (
-    <ViewWrapper backgroundImage={selectedFruit.img}>
+    <ViewWrapper>
       <ProductDetailsWrapper>
+        <ImageSlider
+          images={ProductImagesArray}
+          imgIndex={selectedFruitIndex}
+        />
         <div className='ficha_container'>
           <h1>PRINCIPALES LÍNEAS DE PRODUCTOS</h1>
           <div className='icons_container'>
@@ -31,7 +69,7 @@ const ProductDetails = () => {
                 src={i === hoveredIndex ? icon_rojo : icon}
                 onMouseOver={() => setHoveredIndex(i)}
                 onMouseLeave={() => setHoveredIndex(-1)}
-                onClick={() => setSelectedFruit(Frutas[i])}
+                onClick={() => changeFruit(i)}
                 alt='Figura fruta'
                 key={i}
               />

@@ -9,6 +9,7 @@ export const ProductDetailsWrapper = styled.div`
   position: relative;
   /* align-items: center; */
   justify-content: center;
+  overflow-x: scroll;
 
   .ficha_container {
     height: calc(100vh - var(--navbar-height));

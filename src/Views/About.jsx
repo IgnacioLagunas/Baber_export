@@ -5,6 +5,7 @@ import { BiPlus } from 'react-icons/bi';
 import { IoClose } from 'react-icons/io5';
 import { AboutWrapper } from './Styles/About.styles';
 import QualitySeal from '../Components/QualitySeal';
+import Carousel from '../Components/Carousel';
 const About = () => {
   const { About_1, About_2, About_3, About_4, About_5, About_6 } = AboutFotos;
   const { Icon_mision, Icon_vision } = AboutIcons;
@@ -12,10 +13,13 @@ const About = () => {
   const [cardsVisible, setCardsVisible] = useState(false);
 
   return (
-    <ViewWrapper>
+    <ViewWrapper className='about'>
       <QualitySeal />
       <AboutWrapper backgroundImage={About_2}>
-        <div className='background' />
+        <Carousel
+          height='70vh'
+          images={[About_2, About_3, About_4, About_5, About_6]}
+        />
         <div className='cards_container'>
           <div className={`card ${cardsVisible ? 'visible' : 'main_card'}`}>
             <div className='card_text'>

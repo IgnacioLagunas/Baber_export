@@ -1,40 +1,46 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 
 const CarouselWrapper = styled.div`
   width: 100%;
-  height: 400px;
-  position: relative;
+  height: ${({ height }) => height || '100vh'};
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
   img {
     position: absolute;
     object-fit: cover;
+    opacity: 0;
+    transition: opacity 2s ease;
+
+    &.active {
+      opacity: 1;
+    }
   }
 `;
 
-const Carousel = ({ images }) => {
+const Carousel = ({ images, timeOut = 7000, height = '100vh' }) => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   const changeImg = () => {
-    images.forEach((img, index) => {
-      setTimeout(() => {
-        console.log(index);
-        setCurrentImageIndex(index);
-      }, 3000);
-    });
+    setCurrentImageIndex((current) =>
+      current === images.length - 1 ? 0 : current + 1
+    );
     console.log('llamado');
   };
 
   useEffect(() => {
-    changeImg();
-  }, []);
+    setTimeout(() => changeImg(), timeOut);
+  }, [currentImageIndex]);
 
   return (
-    <CarouselWrapper>
+    <CarouselWrapper height={height}>
       {images.map((img, index) => (
         <img
+          className={currentImageIndex === index && 'active'}
           src={img}
           key={index}
-          style={{ opacity: currentImageIndex === index ? 1 : 0 }}
         ></img>
       ))}
     </CarouselWrapper>
