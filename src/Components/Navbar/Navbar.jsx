@@ -10,15 +10,15 @@ const links = [
   },
   {
     label: 'NOSOTROS',
-    link: '/About',
+    link: '/#about',
   },
   {
     label: 'PRODUCTOS',
-    link: '/Products',
+    link: '/#products',
   },
   {
     label: 'CONTACTO',
-    link: '/Contact',
+    link: '/#contact',
   },
 ];
 
@@ -33,14 +33,14 @@ const Navbar = () => {
         <ul>
           {links.map(({ link, label }, index) => (
             <li>
-              <Link
+              <a
                 className={activeTab === label ? 'active' : ''}
                 onClick={({ target: { text } }) => setActiveTab(text)}
-                to={link}
+                href={link}
                 key={index}
               >
                 {label}
-              </Link>
+              </a>
             </li>
           ))}
         </ul>

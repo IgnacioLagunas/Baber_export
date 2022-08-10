@@ -11,18 +11,24 @@ const { Home_cerezas, Home_duraznos, Home_manzanas, Home_uvas } = HomeImages;
 const Home = () => {
   return (
     <ViewWrapper>
+      <div id='home'></div>
       <HomeWrapper>
         <Carousel
           images={[Home_cerezas, Home_duraznos, Home_manzanas, Home_uvas]}
         />
         <QualitySeal />
         <div className='title_container'>
-          <h1 className='title'>UNA EMPRESA EXPORTADORA DE FRUTA FRESCA</h1>
-          <button className='home_cta'>CONOCE NUESTROS PRODUCTOS</button>
+          <h1 className='title'>
+            UNA EMPRESA EXPORTADORA DE{' '}
+            <span style={{ fontWeight: 700 }}>FRUTA FRESCA</span>
+          </h1>
+          <a href='#products' className='home_cta'>
+            CONOCE NUESTROS PRODUCTOS
+          </a>
         </div>
-        <button className='nextSection_btn'>
+        <a href='#about' className='nextSection_btn'>
           <HiOutlineArrowDown />
-        </button>
+        </a>
       </HomeWrapper>
     </ViewWrapper>
   );

@@ -20,15 +20,15 @@ const {
 } = ProductosImages;
 
 const ProductImagesArray = [
-  Productos_cerezas,
-  Productos_ciruelas,
-  Productos_kiwi,
-  Productos_limones,
   Productos_manzanas,
-  Productos_naranjas,
-  Productos_nectarines,
   Productos_peras,
   Productos_uvas,
+  Productos_cerezas,
+  Productos_kiwi,
+  Productos_limones,
+  Productos_naranjas,
+  Productos_nectarines,
+  Productos_ciruelas,
 ];
 
 const ProductDetails = () => {

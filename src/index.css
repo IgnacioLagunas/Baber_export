@@ -1,3 +1,16 @@
+html{
+}
+@media (max-width: 700px){
+    html{
+        font-size: 13px;
+    }
+}
+@media (max-width: 500px){
+    html{
+        font-size: 11px;
+    }
+}
+
 :root{
     --navbar-height: 55px;
 }
@@ -16,7 +29,8 @@ body{
 }
 
 .App_container{
-    scroll-snap-type: y mandatory;
+    /* scroll-snap-type: y; */
+    scroll-behavior: smooth !important;
     overflow-y: scroll;
     height: 100vh;
     overflow-x: hidden;

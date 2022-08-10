@@ -1,19 +1,20 @@
 import React, { useState } from 'react';
 import { ViewWrapper } from './Styles/View.styles';
-import { AboutFotos, AboutIcons } from '../Assets/img';
+import { AboutIcons, AboutFotos } from '../Assets/img';
 import { BiPlus } from 'react-icons/bi';
 import { IoClose } from 'react-icons/io5';
 import { AboutWrapper } from './Styles/About.styles';
 import QualitySeal from '../Components/QualitySeal';
 import Carousel from '../Components/Carousel';
 const About = () => {
-  const { About_1, About_2, About_3, About_4, About_5, About_6 } = AboutFotos;
+  const { About_2, About_3, About_4, About_5, About_6 } = AboutFotos;
   const { Icon_mision, Icon_vision } = AboutIcons;
 
   const [cardsVisible, setCardsVisible] = useState(false);
 
   return (
-    <ViewWrapper className='about'>
+    <ViewWrapper>
+      <div id='about'></div>
       <QualitySeal />
       <AboutWrapper backgroundImage={About_2}>
         <Carousel

@@ -13,14 +13,17 @@ const { Icon_carozos, Icon_citricos } = Icons;
 const Products = () => {
   return (
     <ViewWrapper backgroundImage={Background}>
+      <div id='products'></div>
       <ProductsWrapper>
         <QualitySeal />
         <div className='products_container'>
-          <h1>PRINCIPALES LÍNEAS DE PRODUCTOS</h1>
+          <h1>
+            PRINCIPALES LÍNEAS DE <b>PRODUCTOS</b>
+          </h1>
           <div className='products'>
             {Frutas.map(({ label, img, id, ...producto }, i) => (
               <div key={i} className='product'>
-                <img src={img} alt='producto' />
+                {<img src={img} alt='producto' />}
                 <div className='icon'>
                   {producto.carozos && (
                     <img src={Icon_carozos} alt='Etiqueta producto carozo' />

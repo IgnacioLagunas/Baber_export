@@ -30,6 +30,7 @@ const Contact = () => {
 
   return (
     <ViewWrapper backgroundImage={Home_manzanas}>
+      <div id='contact'></div>
       <ContactWrapper>
         <div className='text'>
           <h1 className='title'>ESCRÍBANOS</h1>

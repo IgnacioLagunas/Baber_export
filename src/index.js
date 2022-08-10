@@ -16,7 +16,8 @@ root.render(
       <Navbar />
       <Routes>
         <Route path='/' element={<App />} />
-        <Route path='about' element={<About />} />
+        {/* <Route path='about' element={<About />} />
+        <Route path='products' element={<Products />} /> */}
         <Route path='product/:id' element={<ProductDetails />} />
         <Route path='contact' element={<Contact />} />
       </Routes>

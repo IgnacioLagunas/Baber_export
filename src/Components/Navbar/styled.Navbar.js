@@ -11,6 +11,7 @@ export const NavbarWrapper = styled.header`
   position: fixed;
   z-index: 999;
   top: 0;
+  box-shadow: 0px 0px 13px black;
   nav {
     flex: 1;
     width: 30%;

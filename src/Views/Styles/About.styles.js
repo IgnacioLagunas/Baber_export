@@ -3,6 +3,7 @@ import styled from 'styled-components';
 export const AboutWrapper = styled.div`
   width: 100%;
   min-height: 100vh;
+  height: fit-content;
   display: flex;
   flex-direction: column;
   position: relative;
@@ -10,23 +11,13 @@ export const AboutWrapper = styled.div`
   justify-content: flex-end;
   align-items: center;
 
-  .background {
-    width: 100%;
-    height: 70vh;
-    background-image: url(${({ backgroundImage }) => backgroundImage});
-    background-size: cover;
-    background-position: center;
-    position: absolute;
-    top: 0;
-    left: 0;
-  }
-
   .cards_container {
     z-index: 9;
     width: 85%;
     flex-direction: row;
     justify-content: center;
     gap: 2rem;
+    height: fit-content;
   }
 
   .card {
@@ -34,7 +25,7 @@ export const AboutWrapper = styled.div`
     padding-top: 5rem;
     max-width: 450px;
     flex: 1;
-    height: 60vh;
+    min-height: 60vh;
     background: #ffffff94 0% 0% no-repeat padding-box;
     backdrop-filter: blur(20px);
     border-radius: 5% 5% 0 0;

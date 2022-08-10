@@ -29,6 +29,9 @@ const BannerWrapper = styled.div`
     bottom: -24px;
     left: 0;
   }
+  @media (max-width: 600px) {
+    display: none;
+  }
 `;
 
 const Banner = () => {

@@ -7,12 +7,27 @@ const QualitySealWrapper = styled.div`
   z-index: 9;
   top: 89px;
   right: 111px;
-  width: 200px;
+  max-width: 180px;
+  width: 12%;
+  min-width: 140px;
   height: 200px;
   transform: rotate(-20deg);
   background-color: #ffffffba;
   -webkit-mask: url(${(props) => props.bg}) no-repeat center;
   mask: url(${(props) => props.bg}) no-repeat center;
+
+  @media (max-width: 1100px) {
+    top: 34px;
+    right: 41px;
+    max-width: 180px;
+    min-width: 85px;
+  }
+  
+  @media (max-width: 500px) {
+    top: 10px;
+    right: 18px;
+    min-width: 85px;
+  }
 `;
 
 const QualitySeal = () => {
