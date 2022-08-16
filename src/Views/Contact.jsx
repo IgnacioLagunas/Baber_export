@@ -4,6 +4,7 @@ import { ViewWrapper } from './Styles/View.styles';
 import { HomeImages } from '../Assets/img';
 import { BsCheck } from 'react-icons/bs';
 import { FaPhoneAlt, FaRegEnvelope, FaMapMarkerAlt } from 'react-icons/fa';
+import QualitySeal from '../Components/QualitySeal';
 
 const { Home_manzanas } = HomeImages;
 
@@ -31,9 +32,10 @@ const Contact = () => {
   return (
     <ViewWrapper backgroundImage={Home_manzanas}>
       <div id='contact'></div>
+      <QualitySeal />
       <ContactWrapper>
         <div className='text'>
-          <h1 className='title'>ESCRÍBANOS</h1>
+          <h1 className='title bold'>ESCRÍBANOS</h1>
           <h5 className='subtitle'>
             Uno de los miembros de nuestro equipo lo ayudará en cualquier
             momento
@@ -107,15 +109,20 @@ const Contact = () => {
           <div className='info_container'>
             <div className='info'>
               <FaPhoneAlt style={{ fill: 'red' }} />
-              <a href='tel: +56222113142'>(+56 2) 22113142</a>
+              <a className='bold' href='tel: +56222113142'>
+                (+56 2) 22113142
+              </a>
             </div>
             <div className='info'>
               <FaRegEnvelope />
-              <a href='mailto:baber@baberexport.com'>baber@baberexport.com</a>
+              <a className='semi_bold' href='mailto:baber@baberexport.com'>
+                baber@baberexport.com
+              </a>
             </div>
             <div className='info'>
               <FaMapMarkerAlt />
               <a
+                className='regular'
                 target='_blank'
                 href='https://www.google.cl/maps/search/Rosario+Sur+91,+of.+603,+Las+Condes.+Santiago+%E2%80%93+Chile+%2F+Zip+Code+7580013/@-33.4103943,-70.5726118,17z/data=!3m1!4b1'
               >

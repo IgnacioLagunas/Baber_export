@@ -7,19 +7,21 @@ export const HomeWrapper = styled.div`
   display: flex;
   flex-direction: column;
   position: relative;
-  padding: 0 5rem;
+  padding: 4rem var(--column-width);
+  padding-top: calc(var(--navbar-height) + 13rem);
   /* padding-top: 220px; */
   /* align-items: center; */
   /* justify-content: center; */
 
   .title_container {
-    margin-top: 220px;
+    /* margin-left: 7.14%; */
+    /* margin-top: 220px; */
     width: 40%;
     gap: 1.5rem;
     .title {
       color: white;
       font-size: 4rem;
-      font-weight: 600;
+      font-weight: 500;
       letter-spacing: 2.34px;
       line-height: 80px;
       text-shadow: 0px 0px 20px #000;
@@ -67,10 +69,9 @@ export const HomeWrapper = styled.div`
   }
   @media (max-width: 1100px) {
     /* justify-content: center; */
-    padding: 0 3rem;
     .title_container {
       width: 65%;
-      margin-top: 20vh;
+      /* margin-top: 20vh; */
       .title {
         font-size: 3rem;
         line-height: 50px;

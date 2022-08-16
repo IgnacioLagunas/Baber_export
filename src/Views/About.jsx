@@ -22,7 +22,9 @@ const About = () => {
           images={[About_2, About_3, About_4, About_5, About_6]}
         />
         <div className='cards_container'>
-          <div className={`card ${cardsVisible ? 'visible' : 'main_card'}`}>
+          <div
+            className={`card ${cardsVisible ? 'main_visible' : 'main_card'}`}
+          >
             <div className='card_text'>
               <h1>Somos una empresa familiar Chilena</h1>
               <p>
@@ -49,7 +51,9 @@ const About = () => {
               </div>
             )}
           </div>
-          <div className={`card ${cardsVisible ? 'visible' : 'not_visible'}`}>
+          <div
+            className={`card card2 ${cardsVisible ? 'visible' : 'not_visible'}`}
+          >
             <img src={Icon_vision} alt='Icono de nuestra visión' />
             <div className='card_text'>
               <h2>Nuestra Visión</h2>
@@ -59,13 +63,16 @@ const About = () => {
               </p>
             </div>
           </div>
-          <div className={`card ${cardsVisible ? 'visible' : 'not_visible'}`}>
+          <div
+            className={`card card3 ${cardsVisible ? 'visible' : 'not_visible'}`}
+          >
             <img src={Icon_mision} alt='Icono de nuestra visión' />
             <div className='card_text'>
-              <h2>Nuestra Visión</h2>
+              <h2>Nuestra Misión</h2>
               <p>
-                Impulsar estrategias que nos permita avanzar hacia una
-                producción y exportación más sostenible de nuestros productos.
+                Entregar productos frescos y de la más alta calidad y establecer
+                alianzas de largo plazo y ser el proveedor preferido por
+                nuestros clientes.
               </p>
             </div>
             <div

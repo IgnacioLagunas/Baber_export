@@ -41,7 +41,15 @@ const {
   Icon_uva_rojo,
 } = IconosFrutasRojas;
 
-const { Calendario_manzana } = Calendarios;
+const { Calendario_manzana,
+  Calendario_cereza,
+  Calendario_ciruela,
+  Calendario_kiwi,
+  Calendario_limon,
+  Calendario_naranja,
+  Calendario_nectarin,
+  Calendario_pera,
+  Calendario_uva } = Calendarios;
 
 export const Frutas = [
   {
@@ -58,7 +66,7 @@ export const Frutas = [
     img: Productos_peras,
     icon: Icon_pera,
     icon_rojo: Icon_pera_rojo,
-    calendario: Calendario_manzana,
+    calendario: Calendario_pera,
   },
   {
     id: '0bWkywdnUR',
@@ -66,7 +74,7 @@ export const Frutas = [
     img: Productos_uvas,
     icon: Icon_uva,
     icon_rojo: Icon_uva_rojo,
-    calendario: Calendario_manzana,
+    calendario: Calendario_uva,
   },
   {
     id: 'DAv1B1MZvY',
@@ -74,7 +82,7 @@ export const Frutas = [
     img: Productos_cerezas,
     icon: Icon_cereza,
     icon_rojo: Icon_cereza_rojo,
-    calendario: Calendario_manzana,
+    calendario: Calendario_cereza,
   },
   {
     id: 'U5dXbwrIvt',
@@ -82,7 +90,7 @@ export const Frutas = [
     img: Productos_kiwi,
     icon: Icon_kiwi,
     icon_rojo: Icon_kiwi_rojo,
-    calendario: Calendario_manzana,
+    calendario: Calendario_kiwi,
   },
   {
     id: 'GeDwj03FnA',
@@ -90,7 +98,7 @@ export const Frutas = [
     img: Productos_limones,
     icon: Icon_limon,
     icon_rojo: Icon_limon_rojo,
-    calendario: Calendario_manzana,
+    calendario: Calendario_limon,
     citricos: true,
   },
   {
@@ -99,7 +107,7 @@ export const Frutas = [
     img: Productos_naranjas,
     icon: Icon_naranja,
     icon_rojo: Icon_naranja_rojo,
-    calendario: Calendario_manzana,
+    calendario: Calendario_naranja,
     citricos: true,
   },
   {
@@ -108,7 +116,7 @@ export const Frutas = [
     img: Productos_nectarines,
     icon: Icon_nectarin,
     icon_rojo: Icon_nectarin_rojo,
-    calendario: Calendario_manzana,
+    calendario: Calendario_nectarin,
     carozos: true,
   },
   {
@@ -117,7 +125,7 @@ export const Frutas = [
     img: Productos_ciruelas,
     icon: Icon_ciruela,
     icon_rojo: Icon_ciruela_rojo,
-    calendario: Calendario_manzana,
+    calendario: Calendario_ciruela,
     carozos: true,
   },
 ];

@@ -18,7 +18,7 @@ const Products = () => {
         <QualitySeal />
         <div className='products_container'>
           <h1>
-            PRINCIPALES LÍNEAS DE <b>PRODUCTOS</b>
+            PRINCIPALES LÍNEAS DE <span className='bold'>PRODUCTOS</span>
           </h1>
           <div className='products'>
             {Frutas.map(({ label, img, id, ...producto }, i) => (

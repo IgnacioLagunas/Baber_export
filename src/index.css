@@ -2,17 +2,18 @@ html{
 }
 @media (max-width: 700px){
     html{
-        font-size: 13px;
+        font-size: 14px;
     }
 }
 @media (max-width: 500px){
     html{
-        font-size: 11px;
+        font-size: 12px;
     }
 }
 
 :root{
     --navbar-height: 55px;
+    --column-width: 7.14%;
 }
 
 
@@ -29,11 +30,20 @@ body{
 }
 
 .App_container{
-    /* scroll-snap-type: y; */
     scroll-behavior: smooth !important;
-    overflow-y: scroll;
+    /* overflow-y: scroll; */
+    /* scroll-snap-type: y; */
     height: 100vh;
     overflow-x: hidden;
+    
+}
+@media (max-width: 1200px) {
+
+    .App_container{
+        height: 100%;
+    overflow-y: hidden;
+    }
+
 }
 
 section{
@@ -60,5 +70,17 @@ button{
     border: none;
     width: fit-content;
     cursor: pointer;
+}
+
+.bold{
+    font-weight: 700;
+}
+
+.semi_bold{
+    font-weight: 600;
+}
+
+.regular{
+    font-weight: 500;
 }
 

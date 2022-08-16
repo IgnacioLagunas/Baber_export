@@ -3,14 +3,15 @@ import styled from 'styled-components';
 export const ContactWrapper = styled.div`
   width: 100%;
   min-height: 100vh;
-  padding-top: calc(var(--navbar-height) + 2rem);
+  padding: 0 var(--column-width);
+  padding-top: calc(var(--navbar-height) + 5rem);
   display: flex;
   flex-direction: column;
   position: relative;
   align-items: center;
   justify-content: flex-end;
   background-color: #ffffffa3;
-  gap: 1rem;
+  gap: 2rem;
 
   .text {
     width: fit-content;
@@ -22,7 +23,6 @@ export const ContactWrapper = styled.div`
     h1 {
       letter-spacing: 1.68px;
       font-size: 3rem;
-      font-weight: 500;
     }
 
     h5 {
@@ -32,9 +32,9 @@ export const ContactWrapper = styled.div`
   }
 
   .contact_form {
-    width: 70%;
+    width: 100%;
     max-width: 700px;
-    height: 70vh;
+    height: fit-content;
     border-radius: 40px 40px 0 0;
     background-color: #ffffff69;
     backdrop-filter: blur(20px);
@@ -51,13 +51,13 @@ export const ContactWrapper = styled.div`
       .input {
         width: 100%;
         position: relative;
+        font-size: 0.9rem;
         /* flex-direction: column-reverse; */
         label {
           transition: all 0.3s ease;
           position: absolute;
           left: 5px;
           font-weight: 500;
-          font-size: 0.9rem;
         }
         input,
         textarea {
@@ -67,6 +67,7 @@ export const ContactWrapper = styled.div`
           padding-bottom: 0.5rem;
           padding-left: 5px;
           cursor: pointer;
+          font-size: 1em;
 
           &:focus {
             outline: none;
@@ -87,13 +88,13 @@ export const ContactWrapper = styled.div`
           }
         }
         textarea {
-          height: 130px;
+          height: 100px;
           resize: none;
         }
         .active {
           left: -4px;
           font-weight: 500;
-          font-size: 0.7rem;
+          font-size: 0.8em;
           color: blue;
           top: -24px;
         }
@@ -153,6 +154,13 @@ export const ContactWrapper = styled.div`
           color: black;
           font-size: 0.8rem;
         }
+
+        &:hover{
+          a, svg{
+            color:#0000FF;
+            fill: #0000FF !important;
+          }
+        }
       }
     }
     /* Change Autocomplete styles in Chrome*/
@@ -169,6 +177,29 @@ export const ContactWrapper = styled.div`
       -webkit-text-fill-color: black;
       -webkit-box-shadow: 0 0 0px 1000px #0000 inset;
       transition: background-color 5000s ease-in-out 0s;
+    }
+
+    @media (max-width: 1200px){
+      padding: 4.5rem 10%;
+      padding-bottom: 2rem;
+      border-bottom: 10px solid black;
+
+    }
+
+    @media (max-width: 500px){
+      form{
+        .input{
+          font-size: 1rem;
+        }
+
+      }
+      .info_container{
+        .info{
+          a{
+            font-size: 0.9rem;
+          }
+        }
+      }
     }
   }
 `;

@@ -6,7 +6,7 @@ const QualitySealWrapper = styled.div`
   position: absolute;
   z-index: 9;
   top: 89px;
-  right: 111px;
+  right: 7.14%;
   max-width: 180px;
   width: 12%;
   min-width: 140px;
@@ -17,15 +17,15 @@ const QualitySealWrapper = styled.div`
   mask: url(${(props) => props.bg}) no-repeat center;
 
   @media (max-width: 1100px) {
-    top: 34px;
-    right: 41px;
-    max-width: 180px;
-    min-width: 85px;
+    top: 44px;
+    /* right: 41px; */
+    min-width: 110px;
+    /* min-width: 85px; */
   }
-  
+
   @media (max-width: 500px) {
     top: 10px;
-    right: 18px;
+    /* right: 18px; */
     min-width: 85px;
   }
 `;

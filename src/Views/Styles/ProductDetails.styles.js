@@ -9,13 +9,13 @@ export const ProductDetailsWrapper = styled.div`
   position: relative;
   /* align-items: center; */
   justify-content: center;
-  overflow-x: scroll;
+  overflow-x: hidden;
 
   .ficha_container {
     height: calc(100vh - var(--navbar-height));
     width: 50%;
     padding: 3rem;
-    padding-top: 4.5rem;
+    padding-top: 7rem;
     max-width: 800px;
     /* min-width: fit-content; */
     background-color: #ffffffcf;
@@ -43,7 +43,7 @@ export const ProductDetailsWrapper = styled.div`
       font-size: 3rem;
       width: 100%;
       max-width: 500px;
-      font-weight: 400;
+      font-weight: 500;
       margin: 0 auto;
     }
 
@@ -74,6 +74,20 @@ export const ProductDetailsWrapper = styled.div`
       h1 {
         font-size: 2.1rem;
       }
+    }
+  }
+
+  @media (max-width: 1000px){
+    justify-content: flex-end;
+    overflow-x: hidden;
+
+    .ficha_container{
+      width: 100vw;
+      height: fit-content;
+      min-height: 60vh;
+      max-width:100000px;
+      justify-content: flex-start;
+      padding: 7rem 3rem;
     }
   }
 `;

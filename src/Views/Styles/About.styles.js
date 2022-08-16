@@ -3,6 +3,8 @@ import styled from 'styled-components';
 export const AboutWrapper = styled.div`
   width: 100%;
   min-height: 100vh;
+  padding: 0 var(--column-width);
+  padding-top: calc(var(--navbar-height) + 13rem);
   height: fit-content;
   display: flex;
   flex-direction: column;
@@ -13,11 +15,16 @@ export const AboutWrapper = styled.div`
 
   .cards_container {
     z-index: 9;
-    width: 85%;
+    width: 100%;
+    max-width: 1300px;
     flex-direction: row;
     justify-content: center;
     gap: 2rem;
     height: fit-content;
+
+    @media (max-width: 1200px) {
+      gap: 0px;
+    }
   }
 
   .card {
@@ -82,9 +89,52 @@ export const AboutWrapper = styled.div`
       display: flex;
       animation: fadeIn ease 0.4s;
     }
+    &.main_visible {
+      display: flex;
+      animation: fadeIn ease 0.4s;
+
+      @media (max-width: 1200px) {
+        display: none;
+      }
+    }
     &.not_visible {
       display: none;
       animation: fadeOut ease 3s;
+    }
+
+    @media (max-width: 1200px) {
+      padding: 1.5rem;
+      padding-top: 5rem;
+      min-height: 60vh;
+      gap: 1rem;
+
+      h2 {
+        text-align: center;
+      }
+      p{
+        font-size: 12px;
+      }
+
+      &.card2 {
+        border-radius: 25px 0 0 0;
+        padding-right: 0;
+        & img {
+          width: 85%;
+          max-width: 193px;
+        }
+      }
+      &.card3 {
+        border-radius: 0 25px 0 0;
+        padding-left: 0;
+        img {
+          width: 70%;
+        }
+      }
+
+      .card_button {
+        top: 17px;
+        right: 18px;
+      }
     }
   }
 

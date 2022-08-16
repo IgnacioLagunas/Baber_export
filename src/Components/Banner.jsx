@@ -9,11 +9,11 @@ const BannerWrapper = styled.div`
   height: 170px;
   padding: 20px;
   padding-bottom: 0px;
-  box-shadow: 0px 0px 20px;
+  box-shadow: 0px 0px 5px;
   background-color: #fff;
   position: absolute;
   top: -28px;
-  left: 71px;
+  left: 0;
   img {
     width: 100%;
     object-fit: contain;
@@ -30,7 +30,13 @@ const BannerWrapper = styled.div`
     left: 0;
   }
   @media (max-width: 600px) {
-    display: none;
+    /* display: none; */
+    width: 119px;
+    height: 133px;
+
+    &:after {
+      display: none;
+    }
   }
 `;
 

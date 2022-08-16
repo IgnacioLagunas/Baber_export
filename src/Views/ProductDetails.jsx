@@ -62,7 +62,9 @@ const ProductDetails = () => {
           imgIndex={selectedFruitIndex}
         />
         <div className='ficha_container'>
-          <h1>PRINCIPALES LÍNEAS DE PRODUCTOS</h1>
+          <h1>
+            PRINCIPALES LÍNEAS DE <span className='bold'>PRODUCTOS</span>
+          </h1>
           <div className='icons_container'>
             {Frutas.map(({ icon, icon_rojo }, i) => (
               <img
