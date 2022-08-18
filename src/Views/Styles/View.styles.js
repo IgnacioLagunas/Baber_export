@@ -11,4 +11,8 @@ export const ViewWrapper = styled.section`
   background-image: url(${({ backgroundImage }) => backgroundImage});
   background-size: cover;
   background-color: ${(props) => props.backgroundColor};
+
+  @media (max-width: 1200px){
+    min-height: 100%;
+  }
 `;

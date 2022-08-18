@@ -84,10 +84,19 @@ export const ProductDetailsWrapper = styled.div`
     .ficha_container{
       width: 100vw;
       height: fit-content;
-      min-height: 60vh;
+      min-height: 1px;
       max-width:100000px;
       justify-content: flex-start;
-      padding: 7rem 3rem;
+      padding: 2rem 3rem;
+      gap: 1rem;
+
+      h1{
+        display: none;
+      }
+      .calendario{
+        width: 100%;
+      }
+
     }
   }
 `;

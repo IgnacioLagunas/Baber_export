@@ -1,4 +1,5 @@
 import Logo_banner from './logo_BABER Export/SVG/logo_BABER_Export_vertical.svg';
+import Logo_Nav from './logo_BABER Export/SVG/logo_BABER_Export_horizontal.svg'
 import About_1 from './Nosotros_fotos/Nosotros_1.png';
 import About_2 from './Nosotros_fotos/Nosotros_2.jpg';
 import About_3 from './Nosotros_fotos/Nosotros_3.jpg';
@@ -52,6 +53,7 @@ import Calendario_nectarin from './Calendarios/calendario_nectarines.png';
 
 export const Logo = {
   Logo_banner,
+  Logo_Nav
 };
 
 export const AboutFotos = {

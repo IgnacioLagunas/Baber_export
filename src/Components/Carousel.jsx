@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 const CarouselWrapper = styled.div`
   width: 100%;
-  height: ${({ height }) => height || '100vh'};
+  height: ${({ height }) => height || '100%'};
   position: absolute;
   top: 0;
   left: 0;
@@ -20,7 +20,7 @@ const CarouselWrapper = styled.div`
   }
 `;
 
-const Carousel = ({ images, timeOut = 7000, height = '100vh' }) => {
+const Carousel = ({ images, timeOut = 7000, height = '100%' }) => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   const changeImg = () => {

@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const ProductsWrapper = styled.div`
   width: 100%;
-  min-height: 100vh;
+  min-height: 100%;
   padding: 4rem var(--column-width);
   padding-top: calc(var(--navbar-height) + 13rem);
   display: flex;
@@ -23,6 +23,7 @@ export const ProductsWrapper = styled.div`
       max-width: 700px;
       font-weight: 500;
       margin: 0 auto;
+      z-index: 9;
     }
     .products {
       flex-direction: row;
@@ -71,7 +72,12 @@ export const ProductsWrapper = styled.div`
         }
       }
     }
+
   }
+/* 
+  @media (max-width: 930px){
+    padding-top: 8rem;
+  } */
 
   
 `;

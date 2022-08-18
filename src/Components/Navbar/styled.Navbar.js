@@ -7,7 +7,7 @@ export const NavbarWrapper = styled.header`
   box-shadow: -4px -11px 20px;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   position: fixed;
   z-index: 999;
   top: 0;
@@ -163,9 +163,18 @@ export const NavbarWrapper = styled.header`
     position: relative;
   }
 
+  .logo_container{
+    height: 90%;
+    max-width: 130px;
+    img{
+      object-fit: contain;
+    }
+  }
+
   .burger_menu{
     justify-content: flex-end;
     font-size: 1.3rem;
+    max-width: fit-content;
     svg{
       color:#000000bd;
       cursor: pointer;

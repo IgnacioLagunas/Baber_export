@@ -5,6 +5,7 @@ import { HomeImages } from '../Assets/img';
 import { BsCheck } from 'react-icons/bs';
 import { FaPhoneAlt, FaRegEnvelope, FaMapMarkerAlt } from 'react-icons/fa';
 import QualitySeal from '../Components/QualitySeal';
+import useWindowDimensions from '../Utils/useDimentionsHook';
 
 const { Home_manzanas } = HomeImages;
 
@@ -19,6 +20,8 @@ const Contact = () => {
   const [formData, setFormData] = useState(FormModel);
   const [formularioEnviado, setFormularioEnviado] = useState(false);
 
+  const { width: screenWidth } = useWindowDimensions();
+
   const handleInput = ({ target: { name, value } }) => {
     setFormData((current) => ({ ...current, [name]: value }));
   };
@@ -32,7 +35,7 @@ const Contact = () => {
   return (
     <ViewWrapper backgroundImage={Home_manzanas}>
       <div id='contact'></div>
-      <QualitySeal />
+      {screenWidth > 1200 && <QualitySeal />}
       <ContactWrapper>
         <div className='text'>
           <h1 className='title bold'>ESCRÍBANOS</h1>

@@ -2,16 +2,16 @@ import styled from 'styled-components';
 
 export const AboutWrapper = styled.div`
   width: 100%;
-  min-height: 100vh;
+  height: 100%;
   padding: 0 var(--column-width);
   padding-top: calc(var(--navbar-height) + 13rem);
-  height: fit-content;
   display: flex;
   flex-direction: column;
   position: relative;
   background-color: #bababe2f;
   justify-content: flex-end;
   align-items: center;
+  overflow: hidden;
 
   .cards_container {
     z-index: 9;
@@ -21,10 +21,6 @@ export const AboutWrapper = styled.div`
     justify-content: center;
     gap: 2rem;
     height: fit-content;
-
-    @media (max-width: 1200px) {
-      gap: 0px;
-    }
   }
 
   .card {
@@ -111,21 +107,17 @@ export const AboutWrapper = styled.div`
       h2 {
         text-align: center;
       }
-      p{
+      p {
         font-size: 12px;
       }
 
       &.card2 {
-        border-radius: 25px 0 0 0;
-        padding-right: 0;
         & img {
           width: 85%;
           max-width: 193px;
         }
       }
       &.card3 {
-        border-radius: 0 25px 0 0;
-        padding-left: 0;
         img {
           width: 70%;
         }
@@ -138,15 +130,73 @@ export const AboutWrapper = styled.div`
     }
   }
 
+  @media (max-width: 800px) {
+    padding-bottom: 4rem;
+    .card {
+      min-height: 1px;
+      height: 480px;
+      border-radius: 25px;
+    }
+
+    .main_card {
+      .apple-box_img {
+        display: none;
+      }
+    }
+  }
+
+  @media (max-width: 600px) {
+    .cards_container {
+      flex-direction: column;
+      align-items: center;
+    }
+    .card{
+      padding-bottom:2.5rem;
+      box-shadow: 2px 2px 20px #00000085;
+      img{
+        width: 40% !important;
+        min-width: 120px !important;
+      }
+
+      &.main_visible{
+        display: flex !important;
+      }
+
+      &.visible{
+        /* display: flex !important; */
+
+        animation: fadeInMobile 1s ease;
+        position: initial;
+        opacity: 1;
+      }
+      &.not_visible{
+        /* display: flex !important; */
+        animation: fadeOutMobile 1s ease;
+        position: absolute;
+        opacity: 0;
+        display: none;
+
+      }
+    }
+  }
+
   .main_card {
     display: flex;
     max-width: 650px;
+    position: relative;
     h1 {
       text-align: center;
       margin-bottom: 1.5rem;
     }
 
     p {
+    }
+
+    .apple-box_img {
+      position: absolute;
+      max-width: 340px;
+      bottom: -51px;
+      right: -159px;
     }
   }
 
@@ -169,4 +219,29 @@ export const AboutWrapper = styled.div`
       display: none;
     }
   }
+
+  @keyframes fadeInMobile {
+    0% {
+      position: initial;
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+      pointer-events: all;
+    }
+  }
+  @keyframes fadeOutMobile {
+    0% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0;
+    }
+    100% {
+      position: absolute;
+      pointer-events: none;
+    }
+  }
+
+
 `;

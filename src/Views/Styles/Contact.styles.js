@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const ContactWrapper = styled.div`
   width: 100%;
-  min-height: 100vh;
+  min-height: 100%;
   padding: 0 var(--column-width);
   padding-top: calc(var(--navbar-height) + 5rem);
   display: flex;
@@ -42,6 +42,7 @@ export const ContactWrapper = styled.div`
     padding: 3.5rem 6rem;
     padding-bottom: 2rem;
     justify-content: space-between;
+    gap: 2.5rem;
 
     form {
       display: flex;
@@ -119,21 +120,19 @@ export const ContactWrapper = styled.div`
         justify-content: center;
         font-size: 1rem;
         align-self: center;
-        transition: padding 0.3s ease;
-        transition: font-size 0.4s ease;
-
+        transition: padding 0.2s ease;
+        
         &:hover {
           background-color: black;
           padding: 0.6rem 1.5rem;
         }
-
+        
         &.enviado {
+        transition: padding 0.2s ease;
+
           font-size: 2.5rem;
-          padding: 0;
-          /* height: 3.2rem; */
-          width: 55px;
-          height: 55px;
-          border-radius: 50%;
+          padding: 9px 3px;
+          border-radius: 29px;
           background-color: blue;
         }
       }
@@ -155,10 +154,11 @@ export const ContactWrapper = styled.div`
           font-size: 0.8rem;
         }
 
-        &:hover{
-          a, svg{
-            color:#0000FF;
-            fill: #0000FF !important;
+        &:hover {
+          a,
+          svg {
+            color: #0000ff;
+            fill: #0000ff !important;
           }
         }
       }
@@ -179,27 +179,29 @@ export const ContactWrapper = styled.div`
       transition: background-color 5000s ease-in-out 0s;
     }
 
-    @media (max-width: 1200px){
+    @media (max-width: 1200px) {
       padding: 4.5rem 10%;
       padding-bottom: 2rem;
       border-bottom: 10px solid black;
-
     }
 
-    @media (max-width: 500px){
-      form{
-        .input{
+    @media (max-width: 500px) {
+      form {
+        .input {
           font-size: 1rem;
         }
-
       }
-      .info_container{
-        .info{
-          a{
+      .info_container {
+        .info {
+          a {
             font-size: 0.9rem;
           }
         }
       }
     }
   }
+  @media (max-width: 800px) {
+      padding-top: 8rem;
+     
+    }
 `;

@@ -2,20 +2,14 @@ import styled from 'styled-components';
 
 export const HomeWrapper = styled.div`
   width: 100%;
-  min-height: 100vh;
-  /* margin-top: var(--navbar-height); */
+  height: 100%;
   display: flex;
   flex-direction: column;
   position: relative;
-  padding: 4rem var(--column-width);
+  padding: 300px var(--column-width);
   padding-top: calc(var(--navbar-height) + 13rem);
-  /* padding-top: 220px; */
-  /* align-items: center; */
-  /* justify-content: center; */
 
   .title_container {
-    /* margin-left: 7.14%; */
-    /* margin-top: 220px; */
     width: 40%;
     gap: 1.5rem;
     .title {
@@ -67,7 +61,7 @@ export const HomeWrapper = styled.div`
       border-color: #cf2422;
     }
   }
-  @media (max-width: 1100px) {
+  @media (max-width: 1200px) {
     /* justify-content: center; */
     .title_container {
       width: 65%;
