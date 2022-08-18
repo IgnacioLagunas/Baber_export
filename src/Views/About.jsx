@@ -6,11 +6,14 @@ import { IoClose } from 'react-icons/io5';
 import { AboutWrapper } from './Styles/About.styles';
 import QualitySeal from '../Components/QualitySeal';
 import Carousel from '../Components/Carousel';
+import useWindowDimensions from '../Utils/useDimentionsHook';
 const About = () => {
-  const { About_2, About_3, About_4, About_5, About_6 } = AboutFotos;
+  const { About_1, About_2, About_3, About_4, About_5, About_6 } = AboutFotos;
   const { Icon_mision, Icon_vision } = AboutIcons;
 
   const [cardsVisible, setCardsVisible] = useState(false);
+
+  const { width: screenWidth } = useWindowDimensions();
 
   return (
     <ViewWrapper>
@@ -18,7 +21,7 @@ const About = () => {
       <QualitySeal />
       <AboutWrapper backgroundImage={About_2}>
         <Carousel
-          height='70vh'
+          height={screenWidth < 1200 ? '420px' : '60%'}
           images={[About_2, About_3, About_4, About_5, About_6]}
         />
         <div className='cards_container'>
@@ -42,6 +45,13 @@ const About = () => {
                 colaboradores.
               </p>
             </div>
+            {!cardsVisible && (
+              <img
+                src={About_1}
+                className='apple-box_img'
+                alt='Caja de manzanas Baber Export'
+              />
+            )}
             {!cardsVisible && (
               <div
                 className='card_button'
