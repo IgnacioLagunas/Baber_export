@@ -3,6 +3,7 @@ import styled from 'styled-components';
 export const AboutWrapper = styled.div`
   width: 100%;
   height: 100%;
+  min-height: 100vh;
   padding: 0 var(--column-width);
   padding-top: calc(var(--navbar-height) + 13rem);
   display: flex;
@@ -132,6 +133,7 @@ export const AboutWrapper = styled.div`
 
   @media (max-width: 800px) {
     padding-bottom: 4rem;
+    min-height: 1px;
     .card {
       min-height: 1px;
       height: 480px;

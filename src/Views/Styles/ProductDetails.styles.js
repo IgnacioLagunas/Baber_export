@@ -11,6 +11,19 @@ export const ProductDetailsWrapper = styled.div`
   justify-content: center;
   overflow-x: hidden;
 
+  .tipo_label{
+    position: absolute;
+    color: white;
+    background-color: black;
+    font-size: 1.2rem;
+    right: 0;
+    bottom: 30px;
+    transform: translate(100%);
+    padding: 0.5rem 0.7rem 0.5rem 1rem;
+    border-radius: 0px 34px 34px 0px;
+    text-transform: uppercase;
+  }
+
   .ficha_container {
     height: calc(100vh - var(--navbar-height));
     width: 50%;
@@ -22,17 +35,24 @@ export const ProductDetailsWrapper = styled.div`
     align-items: center;
     justify-content: center;
     gap: 2rem;
+    position: relative;
     .icons_container {
       flex-direction: row;
       gap: 0.7rem;
       width: fit-content;
       flex-wrap: wrap;
       justify-content: center;
-      img {
-        width: 45px;
-        height: 45px;
-        object-fit: contain;
-        cursor: pointer;
+      div{
+        width: fit-content;
+        align-items: center;
+        font-size: 0.8rem;
+        img {
+          width: 55px;
+          height: 55px;
+          object-fit: contain;
+          cursor: pointer;
+        }
+  
       }
     }
 
@@ -89,6 +109,13 @@ export const ProductDetailsWrapper = styled.div`
       justify-content: flex-start;
       padding: 2rem 3rem;
       gap: 1rem;
+
+      .tipo_label{
+        left: 0;
+        transform: translate(0px);
+        width: fit-content;
+        top: -50px;
+      }
 
       h1{
         display: none;

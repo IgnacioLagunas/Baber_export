@@ -8,20 +8,21 @@ import { HomeImages } from '../Assets/img';
 
 const { Home_cerezas, Home_duraznos, Home_manzanas, Home_uvas } = HomeImages;
 
-const Home = () => {
+const Home = ({ homeRef }) => {
   return (
     <ViewWrapper>
       <div id='home'></div>
-      <HomeWrapper>
+      <HomeWrapper ref={homeRef}>
         <Carousel
           images={[Home_cerezas, Home_duraznos, Home_manzanas, Home_uvas]}
         />
         <QualitySeal />
         <div className='title_container'>
-          <h1 className='title'>
-            UNA EMPRESA EXPORTADORA DE{' '}
-            <span style={{ fontWeight: 700 }}>FRUTA FRESCA</span>
-          </h1>
+          <pre className='title'>
+            UNA EMPRESA <br />
+            EXPORTADORA <br />
+            DE <span style={{ fontWeight: 700 }}>FRUTA FRESCA</span>
+          </pre>
           <a href='#products' className='home_cta'>
             CONOCE NUESTROS PRODUCTOS
           </a>

@@ -11,7 +11,6 @@ export const NavbarWrapper = styled.header`
   position: fixed;
   z-index: 999;
   top: 0;
-  box-shadow: 0px 0px 13px black;
   padding: 0 var(--column-width);
   .navbar_collapsable {
     flex: 2;

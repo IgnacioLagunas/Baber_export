@@ -2,7 +2,8 @@ import styled from 'styled-components';
 
 export const ViewWrapper = styled.section`
   width: 100vw;
-  min-height: 100vh;
+  /* min-height: 100vh; */
+  height: 100%;
   /* height: 200px !important; */
   /* height: max-content; */
   /* height: 100%; */

@@ -1,4 +1,5 @@
 html{
+    scroll-behavior: smooth;
 }
 @media (max-width: 700px){
     html{
@@ -30,10 +31,8 @@ body{
 }
 
 .App_container{
-    scroll-behavior: smooth !important;
-    /* overflow-y: scroll; */
-    /* scroll-snap-type: y; */
-    height: 100vh;
+
+    height: 100%;
     overflow-x: hidden;
     
 }
@@ -72,8 +71,13 @@ button{
     cursor: pointer;
 }
 
+.bolder{
+    font-weight: 800 !important;
+
+}
+
 .bold{
-    font-weight: 700;
+    font-weight: 700 !important;
 }
 
 .semi_bold{

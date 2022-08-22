@@ -59,6 +59,7 @@ export const Frutas = [
     icon: Icon_manzana,
     icon_rojo: Icon_manzana_rojo,
     calendario: Calendario_manzana,
+    type: null,
   },
   {
     id: 'd1va2pQEoh',
@@ -67,6 +68,7 @@ export const Frutas = [
     icon: Icon_pera,
     icon_rojo: Icon_pera_rojo,
     calendario: Calendario_pera,
+    type: null,
   },
   {
     id: '0bWkywdnUR',
@@ -75,6 +77,7 @@ export const Frutas = [
     icon: Icon_uva,
     icon_rojo: Icon_uva_rojo,
     calendario: Calendario_uva,
+    type: null,
   },
   {
     id: 'DAv1B1MZvY',
@@ -83,6 +86,7 @@ export const Frutas = [
     icon: Icon_cereza,
     icon_rojo: Icon_cereza_rojo,
     calendario: Calendario_cereza,
+    type: null,
   },
   {
     id: 'U5dXbwrIvt',
@@ -91,6 +95,7 @@ export const Frutas = [
     icon: Icon_kiwi,
     icon_rojo: Icon_kiwi_rojo,
     calendario: Calendario_kiwi,
+    type: null,
   },
   {
     id: 'GeDwj03FnA',
@@ -99,7 +104,7 @@ export const Frutas = [
     icon: Icon_limon,
     icon_rojo: Icon_limon_rojo,
     calendario: Calendario_limon,
-    citricos: true,
+    type: "cítricos",
   },
   {
     id: 'gA04RFJ557',
@@ -108,7 +113,7 @@ export const Frutas = [
     icon: Icon_naranja,
     icon_rojo: Icon_naranja_rojo,
     calendario: Calendario_naranja,
-    citricos: true,
+    type: "cítricos",
   },
   {
     id: 'WsDcn65yR1',
@@ -117,7 +122,7 @@ export const Frutas = [
     icon: Icon_nectarin,
     icon_rojo: Icon_nectarin_rojo,
     calendario: Calendario_nectarin,
-    carozos: true,
+    type: "carozos",
   },
   {
     id: 'HOiVmQZ2G7',
@@ -126,6 +131,6 @@ export const Frutas = [
     icon: Icon_ciruela,
     icon_rojo: Icon_ciruela_rojo,
     calendario: Calendario_ciruela,
-    carozos: true,
+    type: "carozos",
   },
 ];

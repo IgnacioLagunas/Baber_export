@@ -34,7 +34,7 @@ const ProductImagesArray = [
 const ProductDetails = () => {
   const [hoveredIndex, setHoveredIndex] = useState(1);
   const [selectedFruit, setSelectedFruit] = useState(Frutas[0]);
-  const [selectedFruitIndex, setselectedFruitIndex] = useState();
+  const [selectedFruitIndex, setselectedFruitIndex] = useState(0);
 
   const { id } = useParams();
   const navigate = useNavigate();
@@ -62,19 +62,24 @@ const ProductDetails = () => {
           imgIndex={selectedFruitIndex}
         />
         <div className='ficha_container'>
+          {Frutas[selectedFruitIndex].type && (
+            <p className='tipo_label'>{Frutas[selectedFruitIndex].type}</p>
+          )}
           <h1>
             PRINCIPALES LÍNEAS DE <span className='bold'>PRODUCTOS</span>
           </h1>
           <div className='icons_container'>
             {Frutas.map(({ icon, icon_rojo }, i) => (
-              <img
-                src={i === hoveredIndex ? icon_rojo : icon}
-                onMouseOver={() => setHoveredIndex(i)}
-                onMouseLeave={() => setHoveredIndex(-1)}
-                onClick={() => changeFruit(i)}
-                alt='Figura fruta'
-                key={i}
-              />
+              <div>
+                <img
+                  src={i === hoveredIndex ? icon_rojo : icon}
+                  onMouseOver={() => setHoveredIndex(i)}
+                  onMouseLeave={() => setHoveredIndex(-1)}
+                  onClick={() => changeFruit(i)}
+                  alt='Figura fruta'
+                  key={i}
+                />
+              </div>
             ))}
           </div>
           <h2>{selectedFruit.label}</h2>

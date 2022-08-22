@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 export const HomeWrapper = styled.div`
   width: 100%;
+  min-height: 100vh;
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -16,7 +17,7 @@ export const HomeWrapper = styled.div`
       color: white;
       font-size: 4rem;
       font-weight: 500;
-      letter-spacing: 2.34px;
+      letter-spacing: 1.8px;
       line-height: 80px;
       text-shadow: 0px 0px 20px #000;
       min-width: 650px;
@@ -74,6 +75,9 @@ export const HomeWrapper = styled.div`
     }
   }
 
+  @media (max-width: 800px) {
+    min-height: 1px;
+  }
   @media (max-width: 600px) {
     .title_container {
       width: 80%;

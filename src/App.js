@@ -1,4 +1,4 @@
-import React, { Suspense, lazy } from 'react';
+import React, { Suspense, lazy, useEffect, useRef } from 'react';
 import Backdrop from './Components/Backdrop';
 import Home from './Views/Home';
 // import About from './Views/About';
@@ -9,9 +9,18 @@ const Products = lazy(() => import('./Views/Products'));
 const Contact = lazy(() => import('./Views/Contact'));
 
 const App = () => {
+  const homeSection = useRef()
+  const aboutSection = useRef(null)
+  const productsSection = useRef(null)
+  const contactSection = useRef(null)
+
+  useEffect(()=>{
+    console.log(homeSection)
+  },[homeSection])
   return (
+
     <div className='App_container'>
-      <Home />
+      <Home homeRef={homeSection}/>
       <About />
       <Products />
       <Contact />

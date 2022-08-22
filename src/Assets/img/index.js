@@ -50,6 +50,9 @@ import Calendario_uva from './Calendarios/calendario_uvas.png';
 import Calendario_pera from './Calendarios/calendario_peras.png';
 import Calendario_naranja from './Calendarios/calendario_naranjas.png';
 import Calendario_nectarin from './Calendarios/calendario_nectarines.png';
+import Ficha_Global from "./Fichas_Conoce_Chile/Recurso 4.png"
+import Ficha_Conoce from "./Fichas_Conoce_Chile/Recurso 5.png"
+import Ficha_Disponibilidad from "./Fichas_Conoce_Chile/Recurso 3.png"
 
 export const Logo = {
   Logo_banner,
@@ -128,3 +131,7 @@ export const Calendarios = {
   Calendario_pera,
   Calendario_uva
 };
+
+export const FichasConoce = {
+  Ficha_Conoce, Ficha_Global, Ficha_Disponibilidad
+}
