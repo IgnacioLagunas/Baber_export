@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const FichaWrapper = styled.div`
+const FichaWrapper = styled.a`
   width: 100%;
   height: auto;
   justify-content: space-around;
@@ -10,7 +10,12 @@ const FichaWrapper = styled.div`
   box-shadow: 3px 4px 12px #00000085;
   padding: 9px;
   gap: 6px;
+  display: flex;
+  flex-direction: column;
   cursor: pointer;
+  text-decoration: none;
+  color: black;
+  /* pointer-events: ${(props) => (props.href ? 'all' : 'none')}; */
   p {
     text-transform: uppercase;
     font-size: 8px;
@@ -23,8 +28,16 @@ const FichaWrapper = styled.div`
   }
 `;
 
-const Ficha = ({ children, className }) => {
-  return <FichaWrapper className={className}>{children}</FichaWrapper>;
+const Ficha = ({ children, className = '', onClick, href = null }) => {
+  return (
+    <FichaWrapper
+      href={href}
+      onClick={onClick}
+      className={className + ' ' + 'ficha'}
+    >
+      {children}
+    </FichaWrapper>
+  );
 };
 
 export default Ficha;

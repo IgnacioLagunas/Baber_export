@@ -12,6 +12,7 @@ export const ProductDetailsWrapper = styled.div`
   overflow-x: hidden;
 
   .tipo_label{
+    height: fit-content;
     position: absolute;
     color: white;
     background-color: black;

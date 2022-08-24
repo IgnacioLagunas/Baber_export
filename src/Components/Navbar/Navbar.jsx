@@ -63,7 +63,10 @@ const Navbar = () => {
                 <li>
                   <a
                     className={activeTab === label ? 'active' : ''}
-                    onClick={({ target: { text } }) => setActiveTab(text)}
+                    onClick={({ target: { text } }) => {
+                      setActiveTab(text);
+                      setShowNavbar(false);
+                    }}
                     href={link}
                     key={index}
                   >

@@ -10,7 +10,7 @@ export const ViewWrapper = styled.section`
   position: relative;
   overflow-x: hidden;
   background-image: url(${({ backgroundImage }) => backgroundImage});
-  background-size: cover;
+  background-size:  ${(props) => props.backgroundSize || "cover"};
   background-color: ${(props) => props.backgroundColor};
 
   @media (max-width: 1200px){

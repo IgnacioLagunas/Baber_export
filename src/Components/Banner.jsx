@@ -6,29 +6,16 @@ const { Logo_banner } = Logo;
 
 const BannerWrapper = styled.div`
   width: 152px;
-  height: 170px;
-  padding: 20px;
-  padding-bottom: 0px;
-  box-shadow: 0px 0px 5px;
-  background-color: #fff;
+  height: 222px;
   position: absolute;
-  top: -28px;
+  top: -40px;
   left: 0;
   img {
+    filter: drop-shadow(0px 0px 8px rgb(0, 0, 0, 0.218));
     width: 100%;
-    object-fit: contain;
+    object-fit: cover;
   }
-  &:after {
-    box-sizing: border-box;
-    content: '';
-    width: 152px;
-    height: 20px;
-    border-top: 24px solid white;
-    border-right: 153px solid transparent;
-    position: absolute;
-    bottom: -24px;
-    left: 0;
-  }
+
   @media (max-width: 600px) {
     /* display: none; */
     width: 119px;

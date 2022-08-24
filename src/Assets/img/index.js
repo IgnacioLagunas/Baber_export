@@ -1,4 +1,4 @@
-import Logo_banner from './logo_BABER Export/SVG/logo_BABER_Export_vertical.svg';
+import Logo_banner from './logo_BABER Export/logo_BABER.svg';
 import Logo_Nav from './logo_BABER Export/SVG/logo_BABER_Export_horizontal.svg'
 import About_1 from './Nosotros_fotos/Nosotros_1.png';
 import About_2 from './Nosotros_fotos/Nosotros_2.jpg';
@@ -21,8 +21,8 @@ import Home_cerezas from './Home_fotos/cerezas.jpg';
 import Home_manzanas from './Home_fotos/manzanas.jpg';
 import Home_uvas from './Home_fotos/uvas.jpg';
 import Home_duraznos from './Home_fotos/duraznos.jpg';
-import Icon_carozos from './icon_citricos_carozos/SVG/icon_carozos.svg';
-import Icon_citricos from './icon_citricos_carozos/SVG/icon_citricos.svg';
+import Icon_carozos from './icon_citricos_carozos/2x/icon_carozos_1@2x.png';
+import Icon_citricos from './icon_citricos_carozos/2x/icon_citricos_2@2x.png';
 import Icon_cereza from './Iconos_Frutas/cereza_ficha.png';
 import Icon_ciruela from './Iconos_Frutas/ciruela_ficha.png';
 import Icon_kiwi from './Iconos_Frutas/kiwi_ficha.png';
@@ -53,6 +53,7 @@ import Calendario_nectarin from './Calendarios/calendario_nectarines.png';
 import Ficha_Global from "./Fichas_Conoce_Chile/Recurso 4.png"
 import Ficha_Conoce from "./Fichas_Conoce_Chile/Recurso 5.png"
 import Ficha_Disponibilidad from "./Fichas_Conoce_Chile/Recurso 3.png"
+import Ficha_Descargar from "./Fichas_Conoce_Chile/icon_descarga PDF.svg"
 
 export const Logo = {
   Logo_banner,
@@ -133,5 +134,5 @@ export const Calendarios = {
 };
 
 export const FichasConoce = {
-  Ficha_Conoce, Ficha_Global, Ficha_Disponibilidad
+  Ficha_Conoce, Ficha_Global, Ficha_Disponibilidad, Ficha_Descargar
 }

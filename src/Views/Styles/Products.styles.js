@@ -85,21 +85,26 @@ export const ProductsWrapper = styled.div`
       top: 50%;
       gap: 1rem;
       transform: translateY(-25%);
-      div {
+      .ficha {
         width: 104px;
       }
     }
   }
 
   @media (max-width: 900px) {
-    padding-bottom: 12rem;
+    padding-bottom: 220px;
     .products_container{
+      width: 100%;
       .fichas_container{
         flex-direction: row-reverse;
         transform: translate(-50% , 100%);
         bottom: -29px;
         top: auto;
         left: 50%;
+
+        .ficha{
+          width: 90px;
+        }
       }
     }
   }
