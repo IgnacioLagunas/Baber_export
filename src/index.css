@@ -15,6 +15,7 @@ html{
 :root{
     --navbar-height: 55px;
     --column-width: 7.14%;
+    --chinese-font: 'Noto Sans TC', sans-serif;
 }
 
 

@@ -5,10 +5,35 @@ import QualitySeal from '../Components/QualitySeal';
 import Carousel from '../Components/Carousel';
 import { ViewWrapper } from './Styles/View.styles';
 import { HomeImages } from '../Assets/img';
+import { useState, useContext, useEffect } from 'react';
+import LanguageContext from '../Utils/LanguageContext.js';
 
 const { Home_cerezas, Home_duraznos, Home_manzanas, Home_uvas } = HomeImages;
 
 const Home = ({ homeRef }) => {
+  const lenguajeFromContext = useContext(LanguageContext);
+
+  const PageTitle = (leng) => {
+    if (leng === 'español') {
+      return (
+        <pre className='title'>
+          UNA EMPRESA <br />
+          EXPORTADORA <br />
+          DE <span style={{ fontWeight: 700 }}>FRUTA FRESCA</span>
+        </pre>
+      );
+    } else if (leng === 'english') {
+      return (
+        <pre className='title'>
+          A Chilean company
+          <br />
+          EXPORTING <br />
+          <span style={{ fontWeight: 700 }}>fresh fruit</span>
+        </pre>
+      );
+    }
+  };
+
   return (
     <ViewWrapper>
       <div id='home'></div>
@@ -18,13 +43,11 @@ const Home = ({ homeRef }) => {
         />
         <QualitySeal />
         <div className='title_container'>
-          <pre className='title'>
-            UNA EMPRESA <br />
-            EXPORTADORA <br />
-            DE <span style={{ fontWeight: 700 }}>FRUTA FRESCA</span>
-          </pre>
+          {PageTitle(lenguajeFromContext)}
           <a href='#products' className='home_cta'>
-            CONOCE NUESTROS PRODUCTOS
+            {lenguajeFromContext === 'español'
+              ? 'CONOCE NUESTROS PRODUCTOS'
+              : 'GET TO KNOW OUR PRODUCTS'}
           </a>
         </div>
         <a href='#about' className='nextSection_btn'>

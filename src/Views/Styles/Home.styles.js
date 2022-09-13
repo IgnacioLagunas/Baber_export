@@ -18,9 +18,10 @@ export const HomeWrapper = styled.div`
       font-size: 4rem;
       font-weight: 500;
       letter-spacing: 1.8px;
-      line-height: 80px;
+      line-height: 105%;
       text-shadow: 0px 0px 20px #000;
       min-width: 650px;
+      text-transform: uppercase;
     }
 
     .home_cta {
@@ -69,7 +70,6 @@ export const HomeWrapper = styled.div`
       /* margin-top: 20vh; */
       .title {
         font-size: 3rem;
-        line-height: 50px;
         min-width: 0px;
       }
     }
@@ -84,7 +84,6 @@ export const HomeWrapper = styled.div`
 
       .title {
         font-size: 2.7rem;
-        line-height: 40px;
         min-width: 0px;
       }
     }

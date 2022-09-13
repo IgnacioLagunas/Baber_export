@@ -6,6 +6,9 @@ import { ViewWrapper } from './Styles/View.styles';
 import { Frutas } from '../Data';
 import { ProductosImages } from '../Assets/img';
 import ImageSlider from '../Components/ImageSlider';
+import QualitySeal from '../Components/QualitySeal';
+import LanguageContext from '../Utils/LanguageContext.js';
+import { useContext } from 'react';
 
 const {
   Productos_cerezas,
@@ -32,6 +35,7 @@ const ProductImagesArray = [
 ];
 
 const ProductDetails = () => {
+  const language = useContext(LanguageContext);
   const [hoveredIndex, setHoveredIndex] = useState(1);
   const [selectedFruit, setSelectedFruit] = useState(Frutas[0]);
   const [selectedFruitIndex, setselectedFruitIndex] = useState(0);
@@ -57,17 +61,29 @@ const ProductDetails = () => {
   return (
     <ViewWrapper>
       <ProductDetailsWrapper>
+        <QualitySeal />
         <ImageSlider
           images={ProductImagesArray}
           imgIndex={selectedFruitIndex}
         />
         <div className='ficha_container'>
           {Frutas[selectedFruitIndex].type && (
-            <p className='tipo_label'>{Frutas[selectedFruitIndex].type}</p>
+            <p className='tipo_label'>
+              {}
+              {language === 'español'
+                ? Frutas[selectedFruitIndex].type
+                : Frutas[selectedFruitIndex].typeEng}
+            </p>
           )}
-          <h1>
-            PRINCIPALES LÍNEAS DE <span className='bold'>PRODUCTOS</span>
-          </h1>
+          {language === 'español' ? (
+            <h1>
+              PRINCIPALES LÍNEAS DE <span className='bold'>PRODUCTOS</span>
+            </h1>
+          ) : (
+            <h1>
+              OUR MAIN PRODUCT <span className='bold'>LINES</span>
+            </h1>
+          )}
           <div className='icons_container'>
             {Frutas.map(({ icon, icon_rojo }, i) => (
               <div>
@@ -82,13 +98,22 @@ const ProductDetails = () => {
               </div>
             ))}
           </div>
-          <h2>{selectedFruit.label}</h2>
-          <h4>Calendario de embalaje</h4>
+          <h2>
+            {language === 'español'
+              ? selectedFruit.label
+              : selectedFruit.labelEng}
+          </h2>
+          <h4>
+            {language === 'español'
+              ? 'Calendario de embalaje'
+              : 'Packing Schedule'}
+          </h4>
+
           <div className='calendario'>
             <img src={selectedFruit.calendario} alt='' />
           </div>
           <div className='ficha_tecnica'>
-            <p>Ficha Tecnica</p>
+            <p>{language === 'español' ? 'Ficha Técnica' : 'Data Sheet'}</p>
             <BsFileEarmarkPdf />
           </div>
         </div>

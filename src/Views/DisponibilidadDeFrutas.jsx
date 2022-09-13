@@ -36,7 +36,7 @@ const DisponibilidadWrapper = styled.section`
       position: relative;
       padding: 0;
       max-width: 1100px;
-      width: 80%;
+      width: 70%;
       .fichas_container {
         position: absolute;
         width: fit-content;
@@ -81,7 +81,7 @@ const DisponibilidadWrapper = styled.section`
     }
   }
 `;
-const DisponibilidadDeFrutas = ({ className, disponibilidadRef }) => {
+const DisponibilidadDeFrutas = ({ className, disponibilidadRef, language }) => {
   return (
     <DisponibilidadWrapper
       className={className}
@@ -90,9 +90,15 @@ const DisponibilidadDeFrutas = ({ className, disponibilidadRef }) => {
       backgroundImage={Background}
     >
       <div className='container'>
-        <h1>
-          DISPONIBILIDAD DE <span className='bold'>FRUTAS EN CHILE</span>
-        </h1>
+        {language === 'español' ? (
+          <h1>
+            Disponibilidad de <span className='bold'>frutas en Chile</span>
+          </h1>
+        ) : (
+          <h1>
+            Availability of <span className='bold'>FRUITS IN CHILE</span>
+          </h1>
+        )}
         <div className='img_container'>
           <img src={CuadroDisponibilidad} alt='' />
           <div className='fichas_container'>

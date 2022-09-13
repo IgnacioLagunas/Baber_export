@@ -20,7 +20,7 @@ export const ProductDetailsWrapper = styled.div`
     right: 0;
     bottom: 30px;
     transform: translate(100%);
-    padding: 0.5rem 0.7rem 0.5rem 1rem;
+    padding: 0.5rem 1rem 0.5rem 1rem;
     border-radius: 0px 34px 34px 0px;
     text-transform: uppercase;
   }
@@ -125,6 +125,19 @@ export const ProductDetailsWrapper = styled.div`
         width: 100%;
       }
 
+    }
+  }
+
+  @media (max-width: 500px){
+    .ficha_container{
+      .icons_container{
+        div{
+          img{
+            width: 35px;
+          }
+
+        }
+      }
     }
   }
 `;

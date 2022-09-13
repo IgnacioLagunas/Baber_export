@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import { ContactWrapper } from './Styles/Contact.styles';
 import { ViewWrapper } from './Styles/View.styles';
-import { HomeImages } from '../Assets/img';
+import Background from '../Assets/img/contacto_foto.jpeg';
 import { BsCheck } from 'react-icons/bs';
 import { FaPhoneAlt, FaRegEnvelope, FaMapMarkerAlt } from 'react-icons/fa';
 import QualitySeal from '../Components/QualitySeal';
 import useWindowDimensions from '../Utils/useDimentionsHook';
-
-const { Home_manzanas } = HomeImages;
+import LanguageContext from '../Utils/LanguageContext.js';
+import { useContext } from 'react';
 
 const FormModel = {
   name: '',
@@ -17,6 +17,7 @@ const FormModel = {
 };
 
 const Contact = () => {
+  const language = useContext(LanguageContext);
   const [formData, setFormData] = useState(FormModel);
   const [formularioEnviado, setFormularioEnviado] = useState(false);
 
@@ -33,17 +34,28 @@ const Contact = () => {
   };
 
   return (
-    <ViewWrapper backgroundImage={Home_manzanas}>
+    <ViewWrapper backgroundImage={Background}>
       <div id='contact'></div>
       {screenWidth > 1200 && <QualitySeal />}
       <ContactWrapper>
-        <div className='text'>
-          <h1 className='title bold'>ESCRÍBANOS</h1>
-          <h5 className='subtitle'>
-            Uno de los miembros de nuestro equipo lo ayudará en cualquier
-            momento
-          </h5>
-        </div>
+        {language === 'español' ? (
+          <div className='text'>
+            <h1 className='title bold'>ESCRÍBANOS</h1>
+
+            <h5 className='subtitle'>
+              Uno de los miembros de nuestro equipo lo ayudará en cualquier
+              momento
+            </h5>
+          </div>
+        ) : (
+          <div className='text'>
+            <h1 className='title bold'>WRITE TO US</h1>
+
+            <h5 className='subtitle'>
+              One of our team members will help you at any time.
+            </h5>
+          </div>
+        )}
         <div className='contact_form'>
           <form onSubmit={(e) => handleSubmit(e)}>
             <div className='input'>
@@ -57,7 +69,9 @@ const Contact = () => {
                 htmlFor='name'
                 className={formData.name === '' ? '' : 'active'}
               >
-                Nombre y Apellido
+                {language === 'español'
+                  ? 'Nombre y Apellido'
+                  : 'First and Last Name'}
               </label>
             </div>
 
@@ -72,7 +86,7 @@ const Contact = () => {
                 className={formData.mail === '' ? '' : 'active'}
                 htmlFor='mail'
               >
-                Correo
+                {language === 'español' ? 'Nombre y Apellido' : 'Mail'}
               </label>
             </div>
 
@@ -87,7 +101,7 @@ const Contact = () => {
                 className={formData.subject === '' ? '' : 'active'}
                 htmlFor='subject'
               >
-                Asunto
+                {language === 'español' ? 'Nombre y Apellido' : 'Subject'}
               </label>
             </div>
 
@@ -102,11 +116,17 @@ const Contact = () => {
                 className={formData.message === '' ? '' : 'active'}
                 htmlFor='message'
               >
-                Mensaje
+                {language === 'español' ? 'Nombre y Apellido' : 'Message'}
               </label>
             </div>
             <button className={`${formularioEnviado ? 'enviado' : ''}`}>
-              {formularioEnviado ? <BsCheck /> : 'enviar'}
+              {formularioEnviado ? (
+                <BsCheck />
+              ) : language === 'español' ? (
+                'Enviar'
+              ) : (
+                'Send'
+              )}
             </button>
           </form>
           <div className='info_container'>

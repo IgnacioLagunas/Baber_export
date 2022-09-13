@@ -76,9 +76,15 @@ export const NavbarWrapper = styled.header`
             border-top: none;
             border-bottom: none;
           }
+          &.chinese{
+            font-family: var(--chinese-font);
+            color: #000000c4;
+            font-size: 0.75rem;
+          }
 
           &:hover {
             color: red;
+            
           }
         }
       }

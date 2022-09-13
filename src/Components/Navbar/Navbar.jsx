@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Banner from '../Banner';
 import { Logo } from '../../Assets/img';
@@ -7,24 +7,29 @@ import { GiHamburgerMenu } from 'react-icons/gi';
 import { NavbarWrapper } from './styled.Navbar';
 import useWindowDimensions from '../../Utils/useDimentionsHook';
 import Backdrop from '../Backdrop';
+import LanguageContext from '../../Utils/LanguageContext.js';
 
 const { Logo_Nav } = Logo;
 
 const links = [
   {
     label: 'HOME',
+    labelEng: 'HOME',
     link: '/',
   },
   {
     label: 'NOSOTROS',
+    labelEng: 'ABOUT',
     link: '/#about',
   },
   {
     label: 'PRODUCTOS',
+    labelEng: 'PRODUCTS',
     link: '/#products',
   },
   {
     label: 'CONTACTO',
+    labelEng: 'CONTACT',
     link: '/#contact',
   },
 ];
@@ -32,6 +37,11 @@ const links = [
 const Navbar = () => {
   const [activeTab, setActiveTab] = useState('HOME');
   const [showNavbar, setShowNavbar] = useState(false);
+  const [lenguaje, setLenguaje] = useState('Español');
+
+  const lenguajeFromContext = useContext(LanguageContext);
+
+  useEffect(() => {}, [lenguaje]);
 
   const { width: screenWidth } = useWindowDimensions();
   return (
@@ -45,7 +55,7 @@ const Navbar = () => {
       <NavbarWrapper>
         {screenWidth > 1200 ? (
           <div className='banner_container'>
-            <Banner olic={() => console.log('click')} />
+            <Banner onClick={() => console.log('click')} />
           </div>
         ) : (
           <div className='logo_container' onClick={() => console.log('click')}>
@@ -59,8 +69,8 @@ const Navbar = () => {
         >
           <nav>
             <ul>
-              {links.map(({ link, label }, index) => (
-                <li>
+              {links.map(({ link, label, labelEng }, index) => (
+                <li key={index}>
                   <a
                     className={activeTab === label ? 'active' : ''}
                     onClick={({ target: { text } }) => {
@@ -70,7 +80,7 @@ const Navbar = () => {
                     href={link}
                     key={index}
                   >
-                    {label}
+                    {lenguajeFromContext === 'español' ? label : labelEng}
                   </a>
                 </li>
               ))}
@@ -78,9 +88,13 @@ const Navbar = () => {
           </nav>
           <div className='languajeSelector_container'>
             <ul>
-              <li>Español</li>
-              <li className='middle'>Inglés</li>
-              <li>Chino</li>
+              <li onClick={() => setLenguaje('español')}>Español</li>
+              <li onClick={() => setLenguaje('english')} className='middle'>
+                English
+              </li>
+              <li onClick={() => setLenguaje('español')} className='chinese'>
+                中文(中国)
+              </li>
             </ul>
             <div className='ig_logo'>
               <IoLogoInstagram />
