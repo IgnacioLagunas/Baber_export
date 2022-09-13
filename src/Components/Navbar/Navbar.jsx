@@ -7,7 +7,7 @@ import { GiHamburgerMenu } from 'react-icons/gi';
 import { NavbarWrapper } from './styled.Navbar';
 import useWindowDimensions from '../../Utils/useDimentionsHook';
 import Backdrop from '../Backdrop';
-import LanguageContext from '../../Utils/LanguageContext.js';
+import { LanguageContext } from '../../App.js';
 
 const { Logo_Nav } = Logo;
 
@@ -34,14 +34,16 @@ const links = [
   },
 ];
 
-const Navbar = () => {
+const Navbar = ({ setLanguag }) => {
   const [activeTab, setActiveTab] = useState('HOME');
   const [showNavbar, setShowNavbar] = useState(false);
-  const [lenguaje, setLenguaje] = useState('Español');
 
   const lenguajeFromContext = useContext(LanguageContext);
 
-  useEffect(() => {}, [lenguaje]);
+  const changeLanguage = (lang) => {
+    console.log(setLanguag);
+    setLanguag(lang);
+  };
 
   const { width: screenWidth } = useWindowDimensions();
   return (
@@ -88,13 +90,26 @@ const Navbar = () => {
           </nav>
           <div className='languajeSelector_container'>
             <ul>
-              <li onClick={() => setLenguaje('español')}>Español</li>
-              <li onClick={() => setLenguaje('english')} className='middle'>
+              <li
+                style={{
+                  color: lenguajeFromContext === 'español' ? 'red' : 'black',
+                }}
+                onClick={() => changeLanguage('español')}
+              >
+                Español
+              </li>
+              <li
+                style={{
+                  color: lenguajeFromContext === 'english' ? 'red' : 'black',
+                }}
+                onClick={() => changeLanguage('english')}
+                className='middle'
+              >
                 English
               </li>
-              <li onClick={() => setLenguaje('español')} className='chinese'>
+              {/* <li onClick={() => setLenguaje('español')} className='chinese'>
                 中文(中国)
-              </li>
+              </li> */}
             </ul>
             <div className='ig_logo'>
               <IoLogoInstagram />

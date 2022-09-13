@@ -1,28 +1,29 @@
-import React, { Suspense, lazy, useEffect, useRef } from 'react';
-import Backdrop from './Components/Backdrop';
-import Home from './Views/Home';
-const About = lazy(() => import('./Views/About'));
-const Products = lazy(() => import('./Views/Products'));
-const Contact = lazy(() => import('./Views/Contact'));
+import React, { createContext, useState } from 'react';
+import  Navbar  from './Components/Navbar/Navbar.jsx';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Main from './Views/Main.jsx';
+import ProductDetails from './Views/ProductDetails.jsx';
+
+export const LanguageContext = createContext("español")
 
 const App = () => {
-  const homeSection = useRef()
-  const aboutSection = useRef(null)
-  const productsSection = useRef(null)
-  const contactSection = useRef(null)
 
-  useEffect(()=>{
-    console.log(homeSection)
-  },[homeSection])
+  const [language, setLanguage] = useState("español")
   return (
 
-    <div className='App_container'>
-      <Home homeRef={homeSection}/>
-      <About />
-      <Products />
-      <Contact />
-    </div>
+<BrowserRouter>
+      <LanguageContext.Provider value={language}>
+        <Navbar setLanguag={setLanguage}/>
+        <Routes>
+          <Route path='/' element={<Main />} />
+          <Route path='product/:id' element={<ProductDetails />} />
+        </Routes>
+      </LanguageContext.Provider>
+    </BrowserRouter> 
+    
   );
 };
+
+
 
 export default App;

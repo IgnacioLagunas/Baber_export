@@ -7,7 +7,7 @@ import { Frutas } from '../Data';
 import { ProductosImages } from '../Assets/img';
 import ImageSlider from '../Components/ImageSlider';
 import QualitySeal from '../Components/QualitySeal';
-import LanguageContext from '../Utils/LanguageContext.js';
+import { LanguageContext } from '../App.js';
 import { useContext } from 'react';
 
 const {
@@ -81,7 +81,7 @@ const ProductDetails = () => {
             </h1>
           ) : (
             <h1>
-              OUR MAIN PRODUCT <span className='bold'>LINES</span>
+              OUR MAIN <span className='bold'>PRODUCT LINES</span>
             </h1>
           )}
           <div className='icons_container'>
@@ -110,7 +110,14 @@ const ProductDetails = () => {
           </h4>
 
           <div className='calendario'>
-            <img src={selectedFruit.calendario} alt='' />
+            <img
+              src={
+                language === 'español'
+                  ? selectedFruit.calendario
+                  : selectedFruit.calendarioIng
+              }
+              alt=''
+            />
           </div>
           <div className='ficha_tecnica'>
             <p>{language === 'español' ? 'Ficha Técnica' : 'Data Sheet'}</p>

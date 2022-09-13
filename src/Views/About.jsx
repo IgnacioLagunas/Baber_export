@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { ViewWrapper } from './Styles/View.styles';
 import { AboutIcons, AboutFotos } from '../Assets/img';
 import { BiPlus } from 'react-icons/bi';
@@ -7,8 +7,8 @@ import { AboutWrapper } from './Styles/About.styles';
 import QualitySeal from '../Components/QualitySeal';
 import Carousel from '../Components/Carousel';
 import useWindowDimensions from '../Utils/useDimentionsHook';
-import LanguageContext from '../Utils/LanguageContext.js';
-import { useContext } from 'react';
+import { LanguageContext } from '../App.js';
+
 const About = () => {
   const { About_1, About_2, About_3, About_4, About_5, About_6 } = AboutFotos;
   const { Icon_mision, Icon_vision } = AboutIcons;

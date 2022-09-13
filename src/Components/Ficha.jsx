@@ -32,6 +32,7 @@ const Ficha = ({ children, className = '', onClick, href = null }) => {
   return (
     <FichaWrapper
       href={href}
+      target='_blank'
       onClick={onClick}
       className={className + ' ' + 'ficha'}
     >

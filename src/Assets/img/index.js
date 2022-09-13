@@ -50,6 +50,15 @@ import Calendario_uva from './Calendarios/calendario_uvas.png';
 import Calendario_pera from './Calendarios/calendario_peras.png';
 import Calendario_naranja from './Calendarios/calendario_naranjas.png';
 import Calendario_nectarin from './Calendarios/calendario_nectarines.png';
+import Calendario_ing_manzana from './Calendarios_ingles/calendario_manzanas.png';
+import Calendario_ing_kiwi from './Calendarios_ingles/calendario_kiwi.png';
+import Calendario_ing_limon from './Calendarios_ingles/calendario_limones.png';
+import Calendario_ing_cereza from './Calendarios_ingles/calendario_cerezas.png';
+import Calendario_ing_ciruela from './Calendarios_ingles/calendario_ciruelas.png';
+import Calendario_ing_uva from './Calendarios_ingles/calendario_uvas.png';
+import Calendario_ing_pera from './Calendarios_ingles/calendario_peras.png';
+import Calendario_ing_naranja from './Calendarios_ingles/calendario_naranjas.png';
+import Calendario_ing_nectarin from './Calendarios_ingles/calendario_nectarines.png';
 import Ficha_Global from "./Fichas_Conoce_Chile/Recurso 4.png"
 import Ficha_Conoce from "./Fichas_Conoce_Chile/Recurso 5.png"
 import Ficha_Disponibilidad from "./Fichas_Conoce_Chile/Recurso 3.png"
@@ -126,11 +135,21 @@ export const Calendarios = {
   Calendario_ciruela,
   Calendario_kiwi,
   Calendario_limon,
-  Calendario_manzana,
   Calendario_naranja,
   Calendario_nectarin,
   Calendario_pera,
   Calendario_uva
+};
+export const CalendariosIng = {
+  Calendario_ing_manzana,
+  Calendario_ing_cereza,
+  Calendario_ing_ciruela,
+  Calendario_ing_kiwi,
+  Calendario_ing_limon,
+  Calendario_ing_naranja,
+  Calendario_ing_nectarin,
+  Calendario_ing_pera,
+  Calendario_ing_uva
 };
 
 export const FichasConoce = {

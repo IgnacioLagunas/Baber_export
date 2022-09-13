@@ -5,8 +5,8 @@ import QualitySeal from '../Components/QualitySeal';
 import Carousel from '../Components/Carousel';
 import { ViewWrapper } from './Styles/View.styles';
 import { HomeImages } from '../Assets/img';
-import { useState, useContext, useEffect } from 'react';
-import LanguageContext from '../Utils/LanguageContext.js';
+import { useContext, useEffect } from 'react';
+import { LanguageContext } from '../App.js';
 
 const { Home_cerezas, Home_duraznos, Home_manzanas, Home_uvas } = HomeImages;
 
@@ -27,7 +27,8 @@ const Home = ({ homeRef }) => {
         <pre className='title'>
           A Chilean company
           <br />
-          EXPORTING <br />
+          EXPORTER OF
+          <br />
           <span style={{ fontWeight: 700 }}>fresh fruit</span>
         </pre>
       );

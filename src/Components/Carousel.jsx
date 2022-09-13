@@ -27,7 +27,6 @@ const Carousel = ({ images, timeOut = 7000, height = '100%' }) => {
     setCurrentImageIndex((current) =>
       current === images.length - 1 ? 0 : current + 1
     );
-    console.log('llamado');
   };
 
   useEffect(() => {
@@ -38,7 +37,7 @@ const Carousel = ({ images, timeOut = 7000, height = '100%' }) => {
     <CarouselWrapper height={height}>
       {images.map((img, index) => (
         <img
-          className={currentImageIndex === index && 'active'}
+          className={currentImageIndex === index ? 'active' : ''}
           src={img}
           key={index}
         ></img>

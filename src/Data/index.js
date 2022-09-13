@@ -3,6 +3,7 @@ import {
   IconosFrutas,
   IconosFrutasRojas,
   Calendarios,
+  CalendariosIng,
 } from '../Assets/img';
 
 const {
@@ -51,6 +52,16 @@ const { Calendario_manzana,
   Calendario_pera,
   Calendario_uva } = Calendarios;
 
+const { Calendario_ing_manzana,
+  Calendario_ing_cereza,
+  Calendario_ing_ciruela,
+  Calendario_ing_kiwi,
+  Calendario_ing_limon,
+  Calendario_ing_naranja,
+  Calendario_ing_nectarin,
+  Calendario_ing_pera,
+  Calendario_ing_uva } = CalendariosIng;
+
 export const Frutas = [
   {
     id: 'SXuEFw2pyp',
@@ -60,6 +71,7 @@ export const Frutas = [
     icon: Icon_manzana,
     icon_rojo: Icon_manzana_rojo,
     calendario: Calendario_manzana,
+    calendarioIng: Calendario_ing_manzana,
     type: null,
     typeEng: null,
   },
@@ -71,6 +83,7 @@ export const Frutas = [
     icon: Icon_pera,
     icon_rojo: Icon_pera_rojo,
     calendario: Calendario_pera,
+    calendarioIng: Calendario_ing_pera,
     type: null,
     typeEng: null,
   },
@@ -82,6 +95,7 @@ export const Frutas = [
     icon: Icon_uva,
     icon_rojo: Icon_uva_rojo,
     calendario: Calendario_uva,
+    calendarioIng: Calendario_ing_uva,
     type: null,
     typeEng: null,
   },
@@ -93,6 +107,7 @@ export const Frutas = [
     icon: Icon_cereza,
     icon_rojo: Icon_cereza_rojo,
     calendario: Calendario_cereza,
+    calendarioIng: Calendario_ing_cereza,
     type: null,
     typeEng: null,
   },
@@ -104,6 +119,7 @@ export const Frutas = [
     icon: Icon_kiwi,
     icon_rojo: Icon_kiwi_rojo,
     calendario: Calendario_kiwi,
+    calendarioIng: Calendario_ing_kiwi,
     type: null,
     typeEng: null,
   },
@@ -115,6 +131,7 @@ export const Frutas = [
     icon: Icon_limon,
     icon_rojo: Icon_limon_rojo,
     calendario: Calendario_limon,
+    calendarioIng: Calendario_ing_limon,
     type: "cítricos",
     typeEng: "citric",
   },
@@ -126,6 +143,7 @@ export const Frutas = [
     icon: Icon_naranja,
     icon_rojo: Icon_naranja_rojo,
     calendario: Calendario_naranja,
+    calendarioIng: Calendario_ing_naranja,
     type: "cítricos",
     typeEng: "citric",
   },
@@ -137,6 +155,7 @@ export const Frutas = [
     icon: Icon_nectarin,
     icon_rojo: Icon_nectarin_rojo,
     calendario: Calendario_nectarin,
+    calendarioIng: Calendario_ing_nectarin,
     type: "carozos",
     typeEng: "stone fruits",
   },
@@ -148,6 +167,7 @@ export const Frutas = [
     icon: Icon_ciruela,
     icon_rojo: Icon_ciruela_rojo,
     calendario: Calendario_ciruela,
+    calendarioIng: Calendario_ing_ciruela,
     type: "carozos",
     typeEng: "stone fruits",
   },

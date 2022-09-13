@@ -1,9 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
-import { ViewWrapper } from './Styles/View.styles';
 import { FichasConoce } from '../Assets/img';
 import Background from '../Assets/img/Background_Products.jpg';
 import CuadroDisponibilidad from '../Assets/img/cuadro_disponibilidad de fruta en chile/SVG/cuadro_disponibilidad.svg';
+import CuadroDisponibilidadIng from '../Assets/img/cuadro_disponibilidad de fruta en chile/SVG/cuadro_disponibilidad_ing.svg';
 import Ficha from '../Components/Ficha';
 
 const { Ficha_Descargar } = FichasConoce;
@@ -31,6 +31,7 @@ const DisponibilidadWrapper = styled.section`
       max-width: 700px;
       font-weight: 500;
       z-index: 9;
+      text-transform: uppercase;
     }
     .img_container {
       position: relative;
@@ -100,18 +101,34 @@ const DisponibilidadDeFrutas = ({ className, disponibilidadRef, language }) => {
           </h1>
         )}
         <div className='img_container'>
-          <img src={CuadroDisponibilidad} alt='' />
+          {language === 'español' ? (
+            <img src={CuadroDisponibilidad} alt='' />
+          ) : (
+            <img src={CuadroDisponibilidadIng} alt='' />
+          )}
+
           <div className='fichas_container'>
             <Ficha>
-              <p className='bold'>Descargar</p>
+              {language === 'español' ? (
+                <p className='bold'>Descargar</p>
+              ) : (
+                <p className='bold'>Download</p>
+              )}
               <img
                 style={{ height: '35px' }}
                 src={Ficha_Descargar}
                 alt='Ícono descargar'
               />
-              <p className='subtitle'>
-                DISPONIBILIDAD DE <span className='bold'>FRUTAS EN CHILE</span>
-              </p>
+              {language === 'español' ? (
+                <p className='subtitle'>
+                  DISPONIBILIDAD DE{' '}
+                  <span className='bold'>FRUTAS EN CHILE</span>
+                </p>
+              ) : (
+                <p className='subtitle'>
+                  Availability of <span className='bold'>FRUITS IN CHILE</span>
+                </p>
+              )}
             </Ficha>
           </div>
         </div>

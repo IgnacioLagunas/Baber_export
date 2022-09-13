@@ -11,7 +11,7 @@ import Ficha from '../Components/Ficha';
 import DisponibilidadDeFrutas from './DisponibilidadDeFrutas';
 import { useState } from 'react';
 import { useRef } from 'react';
-import LanguageContext from '../Utils/LanguageContext.js';
+import { LanguageContext } from '../App.js';
 import { useContext } from 'react';
 
 const { Icon_carozos, Icon_citricos } = Icons;
@@ -56,7 +56,7 @@ const Products = () => {
               </h1>
             ) : (
               <h1>
-                OUR MAIN PRODUCT <span className='bold'>LINES</span>
+                OUR MAIN <span className='bold'> PRODUCT LINES</span>
               </h1>
             )}
 
@@ -109,7 +109,7 @@ const Products = () => {
                 )}
                 <img src={Ficha_Disponibilidad} alt='' />
               </Ficha>
-              <Ficha>
+              <Ficha href={'https://www.gob.cl/nuestro-pais/'}>
                 {language === 'español' ? (
                   <p className='bolder'>Conoce más de Chile</p>
                 ) : (
@@ -118,7 +118,7 @@ const Products = () => {
 
                 <img src={Ficha_Conoce} alt='' />
               </Ficha>
-              <Ficha>
+              <Ficha href={'https://www.globalgap.org/es/'}>
                 {language === 'español' ? (
                   <p style={{ textTransform: 'initial', fontSize: '8px' }}>
                     Asociados certificado Productores{' '}

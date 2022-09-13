@@ -6,7 +6,7 @@ import { BsCheck } from 'react-icons/bs';
 import { FaPhoneAlt, FaRegEnvelope, FaMapMarkerAlt } from 'react-icons/fa';
 import QualitySeal from '../Components/QualitySeal';
 import useWindowDimensions from '../Utils/useDimentionsHook';
-import LanguageContext from '../Utils/LanguageContext.js';
+import { LanguageContext } from '../App.js';
 import { useContext } from 'react';
 
 const FormModel = {
@@ -27,8 +27,17 @@ const Contact = () => {
     setFormData((current) => ({ ...current, [name]: value }));
   };
 
+  const isFormEmpty = () => {
+    const values = Object.values(formData);
+    const empty = values.some((value) => value === '');
+    return empty;
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
+    if (isFormEmpty()) {
+      return;
+    }
     setFormularioEnviado((current) => !current);
     console.log(formData);
   };
@@ -86,7 +95,7 @@ const Contact = () => {
                 className={formData.mail === '' ? '' : 'active'}
                 htmlFor='mail'
               >
-                {language === 'español' ? 'Nombre y Apellido' : 'Mail'}
+                {language === 'español' ? 'Correo' : 'Mail'}
               </label>
             </div>
 
@@ -101,7 +110,7 @@ const Contact = () => {
                 className={formData.subject === '' ? '' : 'active'}
                 htmlFor='subject'
               >
-                {language === 'español' ? 'Nombre y Apellido' : 'Subject'}
+                {language === 'español' ? 'Asunto' : 'Subject'}
               </label>
             </div>
 
@@ -116,7 +125,7 @@ const Contact = () => {
                 className={formData.message === '' ? '' : 'active'}
                 htmlFor='message'
               >
-                {language === 'español' ? 'Nombre y Apellido' : 'Message'}
+                {language === 'español' ? 'Mensaje' : 'Message'}
               </label>
             </div>
             <button className={`${formularioEnviado ? 'enviado' : ''}`}>

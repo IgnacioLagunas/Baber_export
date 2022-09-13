@@ -72,7 +72,7 @@ export const NavbarWrapper = styled.header`
           cursor: pointer;
 
           &.middle {
-            border: 1px solid #00000054;
+            border-left: 1px solid #00000054;
             border-top: none;
             border-bottom: none;
           }

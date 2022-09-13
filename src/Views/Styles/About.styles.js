@@ -112,18 +112,6 @@ export const AboutWrapper = styled.div`
         font-size: 12px;
       }
 
-      &.card2 {
-        & img {
-          width: 85%;
-          max-width: 193px;
-        }
-      }
-      &.card3 {
-        img {
-          width: 70%;
-        }
-      }
-
       .card_button {
         top: 17px;
         right: 18px;
