@@ -25,9 +25,9 @@ const Home = ({ homeRef }) => {
     } else if (leng === 'english') {
       return (
         <pre className='title'>
-          A Chilean company
+          Chilean company
           <br />
-          EXPORTER OF
+          EXPORTing
           <br />
           <span style={{ fontWeight: 700 }}>fresh fruit</span>
         </pre>

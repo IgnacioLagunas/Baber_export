@@ -1,4 +1,4 @@
-import React, { lazy, useRef } from 'react';
+import React, { lazy, useEffect, useRef } from 'react';
 import Home from './Home';
 import '../index.css';
 const About = lazy(() => import('./About'));
@@ -7,16 +7,26 @@ const Contact = lazy(() => import('./Contact'));
 
 const Main = () => {
   const homeSection = useRef();
-  // const aboutSection = useRef(null);
-  // const productsSection = useRef(null);
-  // const contactSection = useRef(null);
+  const aboutSection = useRef();
+  const productsSection = useRef();
+  const contactSection = useRef();
+
+  useEffect(() => {
+    if (window.location.hash === '#about') {
+      aboutSection.current.scrollIntoView();
+    } else if (window.location.hash === '#products') {
+      productsSection.current.scrollIntoView();
+    } else if (window.location.hash === '#contact') {
+      contactSection.current.scrollIntoView();
+    }
+  }, []);
 
   return (
     <div className='App_container'>
       <Home homeRef={homeSection} />
-      <About />
-      <Products />
-      <Contact />
+      <About aboutRef={aboutSection} />
+      <Products productRef={productsSection} />
+      <Contact contactRef={contactSection} />
     </div>
   );
 };

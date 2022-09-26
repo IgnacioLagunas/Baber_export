@@ -40,6 +40,7 @@ const Carousel = ({ images, timeOut = 7000, height = '100%' }) => {
           className={currentImageIndex === index ? 'active' : ''}
           src={img}
           key={index}
+          alt='Imagen de fondo'
         ></img>
       ))}
     </CarouselWrapper>

@@ -21,8 +21,10 @@ import Home_cerezas from './Home_fotos/cerezas.jpg';
 import Home_manzanas from './Home_fotos/manzanas.jpg';
 import Home_uvas from './Home_fotos/uvas.jpg';
 import Home_duraznos from './Home_fotos/duraznos.jpg';
-import Icon_carozos from './icon_citricos_carozos/2x/icon_carozos_1@2x.png';
-import Icon_citricos from './icon_citricos_carozos/2x/icon_citricos_2@2x.png';
+import Icon_carozos from './icon_citricos_carozos/esp/icon_carozos_1@2x.png';
+import Icon_citricos from './icon_citricos_carozos/esp/icon_citricos_2@2x.png';
+import Icon_citricos_eng from './icon_citricos_carozos/eng/citrico.png';
+import Icon_carozos_eng from './icon_citricos_carozos/eng/carozo.png';
 import Icon_cereza from './Iconos_Frutas/cereza_ficha.png';
 import Icon_ciruela from './Iconos_Frutas/ciruela_ficha.png';
 import Icon_kiwi from './Iconos_Frutas/kiwi_ficha.png';
@@ -103,6 +105,8 @@ export const HomeImages = {
 export const Icons = {
   Icon_carozos,
   Icon_citricos,
+  Icon_carozos_eng,
+  Icon_citricos_eng
 };
 
 export const IconosFrutas = {

@@ -6,6 +6,16 @@ import {
   CalendariosIng,
 } from '../Assets/img';
 
+import Ficha_Manzanas from '../Assets/img/Fichas_Tecnicas/apples.pdf';
+import Ficha_Cherries from '../Assets/img/Fichas_Tecnicas/cherries.pdf';
+import Ficha_Uvas from '../Assets/img/Fichas_Tecnicas/grapes.pdf';
+import Ficha_Peras from '../Assets/img/Fichas_Tecnicas/pears.pdf';
+import Ficha_Duraznos from '../Assets/img/Fichas_Tecnicas/nectarines.pdf';
+import Ficha_Kiwi from '../Assets/img/Fichas_Tecnicas/kiwi.pdf';
+import Ficha_Ciruelas from '../Assets/img/Fichas_Tecnicas/plums.pdf';
+import Ficha_Limones from '../Assets/img/Fichas_Tecnicas/lemons.pdf';
+import Ficha_Naranjas from '../Assets/img/Fichas_Tecnicas/oranges.pdf';
+
 const {
   Productos_cerezas,
   Productos_ciruelas,
@@ -73,6 +83,7 @@ export const Frutas = [
     calendario: Calendario_manzana,
     calendarioIng: Calendario_ing_manzana,
     type: null,
+    ficha: Ficha_Manzanas,
     typeEng: null,
   },
   {
@@ -85,6 +96,7 @@ export const Frutas = [
     calendario: Calendario_pera,
     calendarioIng: Calendario_ing_pera,
     type: null,
+    ficha: Ficha_Peras,
     typeEng: null,
   },
   {
@@ -97,6 +109,7 @@ export const Frutas = [
     calendario: Calendario_uva,
     calendarioIng: Calendario_ing_uva,
     type: null,
+    ficha: Ficha_Uvas,
     typeEng: null,
   },
   {
@@ -109,6 +122,7 @@ export const Frutas = [
     calendario: Calendario_cereza,
     calendarioIng: Calendario_ing_cereza,
     type: null,
+    ficha: Ficha_Cherries,
     typeEng: null,
   },
   {
@@ -121,6 +135,7 @@ export const Frutas = [
     calendario: Calendario_kiwi,
     calendarioIng: Calendario_ing_kiwi,
     type: null,
+    ficha: Ficha_Kiwi,
     typeEng: null,
   },
   {
@@ -133,6 +148,7 @@ export const Frutas = [
     calendario: Calendario_limon,
     calendarioIng: Calendario_ing_limon,
     type: "cítricos",
+    ficha: Ficha_Limones,
     typeEng: "citric",
   },
   {
@@ -145,6 +161,7 @@ export const Frutas = [
     calendario: Calendario_naranja,
     calendarioIng: Calendario_ing_naranja,
     type: "cítricos",
+    ficha: Ficha_Naranjas,
     typeEng: "citric",
   },
   {
@@ -157,6 +174,7 @@ export const Frutas = [
     calendario: Calendario_nectarin,
     calendarioIng: Calendario_ing_nectarin,
     type: "carozos",
+    ficha: Ficha_Duraznos,
     typeEng: "stone fruits",
   },
   {
@@ -169,6 +187,7 @@ export const Frutas = [
     calendario: Calendario_ciruela,
     calendarioIng: Calendario_ing_ciruela,
     type: "carozos",
+    ficha: Ficha_Ciruelas,
     typeEng: "stone fruits",
   },
 ];

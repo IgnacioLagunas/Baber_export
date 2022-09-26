@@ -1,7 +1,11 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { ProductDetailsWrapper } from './Styles/ProductDetails.styles';
-import { BsFileEarmarkPdf } from 'react-icons/bs';
+import {
+  BsFileEarmarkPdf,
+  BsFillArrowLeftCircleFill,
+  BsFillArrowRightCircleFill,
+} from 'react-icons/bs';
 import { ViewWrapper } from './Styles/View.styles';
 import { Frutas } from '../Data';
 import { ProductosImages } from '../Assets/img';
@@ -48,8 +52,21 @@ const ProductDetails = () => {
     setselectedFruitIndex(i);
   };
 
+  const slide = (num) => {
+    const length = Frutas.length;
+    let targetIndex;
+    if (selectedFruitIndex + num > length - 1) {
+      targetIndex = 0;
+    } else if (selectedFruitIndex + num < 0) {
+      targetIndex = length - 1;
+    } else {
+      targetIndex = selectedFruitIndex + num;
+    }
+    changeFruit(targetIndex);
+  };
+
   useEffect(() => {
-    const idFruitIndex = Frutas.findIndex((fruta) => fruta.id == id);
+    const idFruitIndex = Frutas.findIndex((fruta) => fruta.id === id);
     if (idFruitIndex > -1) {
       setSelectedFruit(Frutas[idFruitIndex]);
       setselectedFruitIndex(idFruitIndex);
@@ -66,6 +83,10 @@ const ProductDetails = () => {
           images={ProductImagesArray}
           imgIndex={selectedFruitIndex}
         />
+        <div className='arrows'>
+          <BsFillArrowLeftCircleFill onClick={() => slide(-1)} />
+          <BsFillArrowRightCircleFill onClick={() => slide(1)} />
+        </div>
         <div className='ficha_container'>
           {Frutas[selectedFruitIndex].type && (
             <p className='tipo_label'>
@@ -86,7 +107,7 @@ const ProductDetails = () => {
           )}
           <div className='icons_container'>
             {Frutas.map(({ icon, icon_rojo }, i) => (
-              <div>
+              <div key={i}>
                 <img
                   src={i === hoveredIndex ? icon_rojo : icon}
                   onMouseOver={() => setHoveredIndex(i)}
@@ -119,10 +140,10 @@ const ProductDetails = () => {
               alt=''
             />
           </div>
-          <div className='ficha_tecnica'>
+          <a className='ficha_tecnica' href={selectedFruit.ficha} download>
             <p>{language === 'español' ? 'Ficha Técnica' : 'Data Sheet'}</p>
             <BsFileEarmarkPdf />
-          </div>
+          </a>
         </div>
       </ProductDetailsWrapper>
     </ViewWrapper>

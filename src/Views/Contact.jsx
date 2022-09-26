@@ -16,7 +16,7 @@ const FormModel = {
   message: '',
 };
 
-const Contact = () => {
+const Contact = ({ contactRef }) => {
   const language = useContext(LanguageContext);
   const [formData, setFormData] = useState(FormModel);
   const [formularioEnviado, setFormularioEnviado] = useState(false);
@@ -46,7 +46,7 @@ const Contact = () => {
     <ViewWrapper backgroundImage={Background}>
       <div id='contact'></div>
       {screenWidth > 1200 && <QualitySeal />}
-      <ContactWrapper>
+      <ContactWrapper ref={contactRef}>
         {language === 'español' ? (
           <div className='text'>
             <h1 className='title bold'>ESCRÍBANOS</h1>
@@ -156,6 +156,7 @@ const Contact = () => {
               <a
                 className='regular'
                 target='_blank'
+                rel='noopener noreferrer'
                 href='https://www.google.cl/maps/search/Rosario+Sur+91,+of.+603,+Las+Condes.+Santiago+%E2%80%93+Chile+%2F+Zip+Code+7580013/@-33.4103943,-70.5726118,17z/data=!3m1!4b1'
               >
                 Rosario Sur 91, of. 603, Las Condes. Santiago – Chile / Zip Code

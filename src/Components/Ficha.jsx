@@ -3,13 +3,12 @@ import styled from 'styled-components';
 
 const FichaWrapper = styled.a`
   width: 100%;
-  height: auto;
+  height: 100px;
   justify-content: space-around;
   background-color: white;
   border-radius: 0px 14px;
   box-shadow: 3px 4px 12px #00000085;
   padding: 9px;
-  gap: 6px;
   display: flex;
   flex-direction: column;
   cursor: pointer;
@@ -26,6 +25,10 @@ const FichaWrapper = styled.a`
     height: 55px;
     object-fit: contain;
   }
+
+  .highlight {
+    font-size: 11px;
+  }
 `;
 
 const Ficha = ({ children, className = '', onClick, href = null }) => {
@@ -34,7 +37,7 @@ const Ficha = ({ children, className = '', onClick, href = null }) => {
       href={href}
       target='_blank'
       onClick={onClick}
-      className={className + ' ' + 'ficha'}
+      className={`${className} ficha`}
     >
       {children}
     </FichaWrapper>

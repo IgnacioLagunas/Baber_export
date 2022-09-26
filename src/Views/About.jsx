@@ -9,7 +9,7 @@ import Carousel from '../Components/Carousel';
 import useWindowDimensions from '../Utils/useDimentionsHook';
 import { LanguageContext } from '../App.js';
 
-const About = () => {
+const About = ({ aboutRef }) => {
   const { About_1, About_2, About_3, About_4, About_5, About_6 } = AboutFotos;
   const { Icon_mision, Icon_vision } = AboutIcons;
   const language = useContext(LanguageContext);
@@ -20,7 +20,7 @@ const About = () => {
 
   return (
     <ViewWrapper>
-      <div id='about'></div>
+      <div id='about' ref={aboutRef}></div>
       <QualitySeal />
       <AboutWrapper backgroundImage={About_2}>
         <Carousel
@@ -33,7 +33,7 @@ const About = () => {
           >
             {language === 'español' ? (
               <div className='card_text'>
-                <h1>Somos una empresa familiar Chilena</h1>
+                <h1>Una empresa exportadora de fruta fresca</h1>
                 <p>
                   <b>BABER Export</b> es una compañía de negocios familiar
                   dedicada a la exportación de frutas de calidad Premium en
@@ -51,7 +51,7 @@ const About = () => {
               </div>
             ) : (
               <div className='card_text'>
-                <h1>We are a Chilean family company</h1>
+                <h1>A Chilean company exporting fresh fruit</h1>
                 <p>
                   <b>BABER EXPORT SPA</b> is a Chilean business company focused
                   on the export of fresh fruits from the different regions of

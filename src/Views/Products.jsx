@@ -5,7 +5,7 @@ import { ViewWrapper } from './Styles/View.styles';
 import Background from '../Assets/img/Background_Products.jpg';
 import QualitySeal from '../Components/QualitySeal';
 import { Link } from 'react-router-dom';
-import { Icons, IconosFrutas, FichasConoce } from '../Assets/img';
+import { Icons, FichasConoce } from '../Assets/img';
 import { Frutas } from '../Data';
 import Ficha from '../Components/Ficha';
 import DisponibilidadDeFrutas from './DisponibilidadDeFrutas';
@@ -14,11 +14,11 @@ import { useRef } from 'react';
 import { LanguageContext } from '../App.js';
 import { useContext } from 'react';
 
-const { Icon_carozos, Icon_citricos } = Icons;
-const { Icon_manzana } = IconosFrutas;
+const { Icon_carozos, Icon_citricos, Icon_carozos_eng, Icon_citricos_eng } =
+  Icons;
 const { Ficha_Conoce, Ficha_Global, Ficha_Disponibilidad } = FichasConoce;
 
-const Products = () => {
+const Products = ({ productRef }) => {
   const [showDisponibilidad, setShowDisponibilidad] = useState(false);
   const disponibilidadRef = useRef(null);
 
@@ -47,7 +47,7 @@ const Products = () => {
     <>
       <ViewWrapper backgroundImage={Background} backgroundColor={'#ffffff94'}>
         <div id='products'></div>
-        <ProductsWrapper>
+        <ProductsWrapper ref={productRef}>
           <QualitySeal />
           <div className='products_container'>
             {language === 'español' ? (
@@ -66,18 +66,32 @@ const Products = () => {
                   <div key={i} className='product'>
                     {<img src={img} alt='producto' />}
                     <div className='icon'>
-                      {type && type === 'carozos' && (
-                        <img
-                          src={Icon_carozos}
-                          alt='Etiqueta producto carozo'
-                        />
-                      )}
-                      {type && type === 'cítricos' && (
-                        <img
-                          src={Icon_citricos}
-                          alt='Etiqueta producto citrico'
-                        />
-                      )}
+                      {type &&
+                        type === 'carozos' &&
+                        (language === 'español' ? (
+                          <img
+                            src={Icon_carozos}
+                            alt='Etiqueta producto carozo'
+                          />
+                        ) : (
+                          <img
+                            src={Icon_carozos_eng}
+                            alt='Etiqueta producto carozo'
+                          />
+                        ))}
+                      {type &&
+                        type === 'cítricos' &&
+                        (language === 'español' ? (
+                          <img
+                            src={Icon_citricos}
+                            alt='Etiqueta producto carozo'
+                          />
+                        ) : (
+                          <img
+                            src={Icon_citricos_eng}
+                            alt='Etiqueta producto carozo'
+                          />
+                        ))}
                     </div>
                     <div className='overlay'>
                       <p>{language === 'español' ? label : labelEng}</p>
@@ -99,12 +113,20 @@ const Products = () => {
                 {language === 'español' ? (
                   <p>
                     Disponibilidad de{' '}
-                    <span className='bold'>frutas en Chile</span>
+                    <span className='bold highlight'>
+                      frutas <br />
+                    </span>
+                    en
+                    <span className='bold highlight'> Chile</span>
                   </p>
                 ) : (
                   <p>
                     Availability of{' '}
-                    <span className='bold'>FRUITS IN CHILE</span>
+                    <span className='bold highlight'>
+                      FRUITS <br />
+                    </span>
+                    in
+                    <span className='bold highlight'> Chile</span>
                   </p>
                 )}
                 <img src={Ficha_Disponibilidad} alt='' />
@@ -120,14 +142,12 @@ const Products = () => {
               </Ficha>
               <Ficha href={'https://www.globalgap.org/es/'}>
                 {language === 'español' ? (
-                  <p style={{ textTransform: 'initial', fontSize: '8px' }}>
-                    Asociados certificado Productores{' '}
-                    <span className='bold'>GLOBALGAP</span>
+                  <p style={{ textTransform: 'initial', fontSize: '10px' }}>
+                    <span className='bold'>Certificación</span>
                   </p>
                 ) : (
-                  <p style={{ textTransform: 'initial', fontSize: '8px' }}>
-                    Asociated to <span className='bold'>GLOBALGAP</span>{' '}
-                    Producers Certificate
+                  <p style={{ textTransform: 'initial', fontSize: '10px' }}>
+                    <span className='bold'>Certified by</span>
                   </p>
                 )}
                 <img src={Ficha_Global} alt='' />

@@ -25,6 +25,28 @@ export const ProductDetailsWrapper = styled.div`
     text-transform: uppercase;
   }
 
+  .arrows{
+    position: absolute;
+    right: 50px;
+    bottom: 30px;
+    width: 100px;
+    justify-content: space-between;
+    flex-direction: row;
+    font-size: 2.5rem;
+    color: gray;
+    z-index: 999;
+    
+
+    svg{
+      cursor: pointer;
+
+      &:hover{
+      color: #0000FF;
+    }
+    }
+
+  }
+
   .ficha_container {
     height: calc(100vh - var(--navbar-height));
     width: 50%;
@@ -83,9 +105,11 @@ export const ProductDetailsWrapper = styled.div`
     }
 
     .ficha_tecnica {
+      display:flex;
       flex-direction: row;
       gap: 0.4rem;
       width: fit-content;
+      cursor: pointer;
       p {
         font-size: 14px;
       }
@@ -109,6 +133,7 @@ export const ProductDetailsWrapper = styled.div`
       max-width:100000px;
       justify-content: flex-start;
       padding: 2rem 3rem;
+      padding-bottom: 55px;
       gap: 1rem;
 
       .tipo_label{
@@ -125,6 +150,12 @@ export const ProductDetailsWrapper = styled.div`
         width: 100%;
       }
 
+    }
+
+    .arrows{
+      width: 90%;
+      transform: translateX(50%);
+      right: 50%;
     }
   }
 

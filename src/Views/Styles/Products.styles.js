@@ -26,7 +26,7 @@ export const ProductsWrapper = styled.div`
       letter-spacing: 1.68px;
       font-size: 2.5rem;
       width: 100%;
-      max-width: 700px;
+      max-width: 10000px;
       font-weight: 500;
       z-index: 9;
     }
