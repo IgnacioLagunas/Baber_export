@@ -76,7 +76,8 @@ export const HomeWrapper = styled.div`
   }
 
   @media (max-width: 800px) {
-    min-height: 1px;
+    min-height: 667px;
+    height: 100vh;
   }
   @media (max-width: 600px) {
     .title_container {

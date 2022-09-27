@@ -8,6 +8,7 @@ const BannerWrapper = styled.div`
   width: 152px;
   height: 222px;
   position: absolute;
+  cursor: pointer;
   top: -40px;
   left: 0;
   img {

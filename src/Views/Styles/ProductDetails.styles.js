@@ -133,7 +133,7 @@ export const ProductDetailsWrapper = styled.div`
       max-width:100000px;
       justify-content: flex-start;
       padding: 2rem 3rem;
-      padding-bottom: 55px;
+      padding-bottom: 40px;
       gap: 1rem;
 
       .tipo_label{
@@ -144,7 +144,8 @@ export const ProductDetailsWrapper = styled.div`
       }
 
       h1{
-        display: none;
+        font-size: 1.5rem;
+        margin: 1rem 0;
       }
       .calendario{
         width: 100%;

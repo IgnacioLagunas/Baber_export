@@ -31,10 +31,17 @@ const FichaWrapper = styled.a`
   }
 `;
 
-const Ficha = ({ children, className = '', onClick, href = null }) => {
+const Ficha = ({
+  children,
+  className = '',
+  onClick,
+  href = null,
+  download = false,
+}) => {
   return (
     <FichaWrapper
       href={href}
+      download={download}
       target='_blank'
       onClick={onClick}
       className={`${className} ficha`}

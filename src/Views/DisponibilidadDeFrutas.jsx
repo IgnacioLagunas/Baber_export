@@ -4,6 +4,7 @@ import { FichasConoce } from '../Assets/img';
 import Background from '../Assets/img/Background_Products.jpg';
 import CuadroDisponibilidad from '../Assets/img/cuadro_disponibilidad de fruta en chile/SVG/cuadro_disponibilidad.svg';
 import CuadroDisponibilidadIng from '../Assets/img/cuadro_disponibilidad de fruta en chile/SVG/cuadro_disponibilidad_ing.svg';
+import CuadroDisponibilidadPDF from '../Assets/img/cuadro_disponibilidad de fruta en chile/Fruits in Chile.pdf';
 import Ficha from '../Components/Ficha';
 
 const { Ficha_Descargar } = FichasConoce;
@@ -108,7 +109,7 @@ const DisponibilidadDeFrutas = ({ className, disponibilidadRef, language }) => {
           )}
 
           <div className='fichas_container'>
-            <Ficha>
+            <Ficha href={CuadroDisponibilidadPDF} download>
               {language === 'español' ? (
                 <p className='bold'>Descargar</p>
               ) : (

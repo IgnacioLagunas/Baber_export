@@ -7,6 +7,7 @@ import { NavbarWrapper } from './styled.Navbar';
 import useWindowDimensions from '../../Utils/useDimentionsHook';
 import Backdrop from '../Backdrop';
 import { LanguageContext } from '../../App.js';
+import { useNavigate } from 'react-router-dom';
 
 const { Logo_Nav } = Logo;
 
@@ -34,6 +35,7 @@ const links = [
 ];
 
 const Navbar = ({ setLanguag }) => {
+  const navigate = useNavigate();
   const [activeTab, setActiveTab] = useState('HOME');
   const [showNavbar, setShowNavbar] = useState(false);
 
@@ -55,11 +57,11 @@ const Navbar = ({ setLanguag }) => {
       )}
       <NavbarWrapper>
         {screenWidth > 1200 ? (
-          <div className='banner_container'>
-            <Banner onClick={() => console.log('click')} />
+          <div className='banner_container' onClick={() => navigate('/')}>
+            <Banner />
           </div>
         ) : (
-          <div className='logo_container' onClick={() => console.log('click')}>
+          <div className='logo_container' onClick={() => navigate('/')}>
             <img src={Logo_Nav} alt='' />
           </div>
         )}

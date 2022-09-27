@@ -9,7 +9,7 @@ export const NavbarWrapper = styled.header`
   align-items: center;
   justify-content: space-between;
   position: fixed;
-  z-index: 999;
+  z-index: 999999;
   top: 0;
   padding: 0 var(--column-width);
   .navbar_collapsable {
@@ -169,6 +169,7 @@ export const NavbarWrapper = styled.header`
   }
 
   .logo_container{
+    cursor: pointer;
     height: 90%;
     max-width: 130px;
     img{
